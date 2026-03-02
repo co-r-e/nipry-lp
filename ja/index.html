@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nipry - The AI-First Slide Authoring &amp; Refinement Tool</title>
-    <meta name="description" content="Create slide drafts fast, refine each slide in parallel with AI agents, then share a live URL via Cloudflare Tunnel for real-time review.">
-    
+    <title>nipry - AIファーストのスライド作成・改善ツール</title>
+    <meta name="description" content="AIエージェントでスライドを高速に作成し、スライドごとに並列で改善。Cloudflare Tunnelでライブ共有。">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="../style.css">
+
     <!-- Favicon (using logo for now) -->
-    <link rel="icon" type="image/svg+xml" href="./assets/nipry-logo.svg">
+    <link rel="icon" type="image/svg+xml" href="../assets/nipry-logo.svg">
 </head>
 <body>
     <header class="header">
         <div class="container header-container">
             <nav class="nav nav-left">
                 <ul class="nav-list">
-                    <li><a href="#features" class="nav-link">Features</a></li>
-                    <li><a href="#how-it-works" class="nav-link">How it Works</a></li>
+                    <li><a href="#features" class="nav-link">機能</a></li>
+                    <li><a href="#how-it-works" class="nav-link">使い方</a></li>
                 </ul>
             </nav>
-            <a href="#" class="logo">
-                <img src="./assets/nipry-logo.svg" alt="nipry logo" class="logo-img">
+            <a href="/ja/" class="logo">
+                <img src="../assets/nipry-logo.svg" alt="nipry logo" class="logo-img">
             </a>
             <div class="nav nav-right">
-                <a href="/ja/" class="nav-link lang-switch" aria-label="日本語に切り替え">
+                <a href="/" class="nav-link lang-switch" aria-label="Switch to English">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lang-icon"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
-                    JA
+                    EN
                 </a>
                 <a href="https://github.com/co-r-e/nipry" target="_blank" rel="noopener noreferrer" class="nav-link github-link">
                     GitHub
@@ -49,17 +49,15 @@
             <div class="hero-overlay"></div>
             <div class="container hero-container">
                 <div class="hero-content">
-                    <h1 class="hero-title"><span class="highlight">Your AI Agent Builds the Deck.</span> You Never Leave the Terminal.</h1>
+                    <h1 class="hero-title"><span class="highlight">AIエージェントがデッキを作る。</span>ターミナルから離れる必要はない。</h1>
                     <p class="hero-subtitle">
-                        You already use Claude Code, Codex, Gemini CLI, or Cursor for coding.
-                        Now ask the same agent to build your slide deck — without leaving your terminal.
-                        No app switching. No PowerPoint. Just flow.
+                        Claude Code、Codex、Gemini CLI、Cursorでコーディングしているなら、同じエージェントでスライドも作れます。アプリの切り替え不要。PowerPoint不要。フローを止めない。
                     </p>
                     <div class="hero-actions">
-                        <a href="https://github.com/co-r-e/nipry" class="btn btn-primary">Get Started</a>
+                        <a href="https://github.com/co-r-e/nipry" class="btn btn-primary">はじめる</a>
                     </div>
                     <p class="hero-oss-note">
-                        <span class="oss-indicator"></span>Free and open source under the MIT License
+                        <span class="oss-indicator"></span>MITライセンスの無料オープンソース
                     </p>
                 </div>
                 <!-- Abstract Visual representation of code-to-slide workflow -->
@@ -90,8 +88,8 @@
             <div class="container">
                 <div class="section-header text-center">
                     <p class="usage-flow-label">Usage</p>
-                    <h2 class="section-title">Build Slides Without<br>Breaking Your Flow</h2>
-                    <p class="section-subtitle">Create, revise, and share slides from the same terminal where you write code.</p>
+                    <h2 class="section-title">フローを止めずに<br>スライドを作成</h2>
+                    <p class="section-subtitle">コードを書くターミナルから、スライドの作成・修正・共有がすべて完結します。</p>
                 </div>
 
                 <div class="usage-timeline">
@@ -100,8 +98,8 @@
                             <span class="usage-step-num">1</span>
                         </div>
                         <div class="usage-step-body">
-                            <h3>Prompt Between Commits</h3>
-                            <p>Just tell Claude Code "Create 5 slides for tomorrow's sprint review." Point it at your project path and it reads sprint context automatically. No need to stop coding.</p>
+                            <h3>コミットの合間にプロンプト</h3>
+                            <p>Claude Codeに「明日のスプリントレビュー用にスライドを5枚作って」と指示するだけ。プロジェクトパスを指定すれば、スプリントの内容を自動で読み取ります。コーディングを中断する必要はありません。</p>
                             <div class="usage-code-snippet">
                                 <div class="usage-code-header">
                                     <span class="dot red"></span>
@@ -119,13 +117,13 @@
                             <span class="usage-step-num">2</span>
                         </div>
                         <div class="usage-step-body">
-                            <h3>AI Generates Your Deck</h3>
-                            <p>The AI agent creates MDX files and your slides appear in the browser in real time. Hot reload updates the preview instantly every time a file is saved.</p>
+                            <h3>AIがデッキを自動生成</h3>
+                            <p>AIエージェントがMDXファイルを生成し、ブラウザにスライドがリアルタイムで表示されます。ファイル保存のたびにホットリロードで即座に更新。</p>
                             <div class="usage-preview-badge">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg>
-                                <span>Auto-generated slide-01.mdx → slide-05.mdx</span>
+                                <span>slide-01.mdx → slide-05.mdx を自動生成</span>
                                 <span class="usage-live-dot"></span>
-                                <span class="usage-live-text">Live Preview</span>
+                                <span class="usage-live-text">ライブプレビュー</span>
                             </div>
                         </div>
                     </div>
@@ -135,8 +133,8 @@
                             <span class="usage-step-num">3</span>
                         </div>
                         <div class="usage-step-body">
-                            <h3>Revise from the Terminal</h3>
-                            <p>"Add an architecture diagram to slide 3." "Make the summary slide more concise." Refine your deck with the same workflow you use for code.</p>
+                            <h3>ターミナルから修正</h3>
+                            <p>「スライド3にアーキテクチャ図を追加して」「まとめスライドをもっと簡潔に」。コードと同じワークフローでデッキを改善できます。</p>
                             <div class="usage-code-snippet">
                                 <div class="usage-code-header">
                                     <span class="dot red"></span>
@@ -154,12 +152,12 @@
                             <span class="usage-step-num">4</span>
                         </div>
                         <div class="usage-step-body">
-                            <h3>Present & Share Instantly</h3>
-                            <p>Jump straight into presenter mode for your meeting, export to PDF/PPTX, or share a live URL with your team via Cloudflare Tunnel.</p>
+                            <h3>すぐにプレゼン・共有</h3>
+                            <p>プレゼンターモードですぐに発表、PDF/PPTXにエクスポート、またはCloudflare Tunnelでチームにライブ共有。</p>
                             <div class="usage-share-options">
                                 <span class="usage-option">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                                    Presenter Mode
+                                    プレゼンターモード
                                 </span>
                                 <span class="usage-option">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
@@ -167,7 +165,7 @@
                                 </span>
                                 <span class="usage-option">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-                                    Tunnel Sharing
+                                    トンネル共有
                                 </span>
                             </div>
                         </div>
@@ -180,30 +178,30 @@
         <section class="concept">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-title">Why nipry?</h2>
-                    <p class="section-subtitle">Built for developers who don't want to break their flow.</p>
+                    <h2 class="section-title">なぜ nipry？</h2>
+                    <p class="section-subtitle">フローを止めたくない開発者のために。</p>
                 </div>
                 <div class="grid grid-3">
                     <div class="card concept-card fade-in">
                         <div class="icon-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path></svg>
                         </div>
-                        <h3>Zero Context Switching</h3>
-                        <p>The AI agent you already use for coding — Claude Code, Codex, Gemini CLI, Cursor — builds your slides too. Same terminal, same flow.</p>
+                        <h3>コンテキストスイッチゼロ</h3>
+                        <p>コーディングに使っているAIエージェント — Claude Code、Codex、Gemini CLI、Cursor — がスライドも作成。同じターミナル、同じフロー。</p>
                     </div>
                     <div class="card concept-card fade-in">
                         <div class="icon-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><file-code class="lucide lucide-file-code"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></file-code><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="m10 13-2 2 2 2"></path><path d="m14 17 2-2-2-2"></path></svg>
                         </div>
-                        <h3>Per-Slide Parallel Editing</h3>
-                        <p>After the draft, run one agent per slide and push multiple revisions at once instead of serial rework.</p>
+                        <h3>スライド単位の並列編集</h3>
+                        <p>ドラフト後、スライドごとにエージェントを割り当てて複数の修正を同時に実行。逐次的な手戻りを大幅に削減。</p>
                     </div>
                     <div class="card concept-card fade-in">
                         <div class="icon-wrapper">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0 3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
                         </div>
-                        <h3>AI Micro-Tuning</h3>
-                        <p>Delegate spacing, wording, chart labels, and visual polish to AI for high-quality finishing touches.</p>
+                        <h3>AIマイクロチューニング</h3>
+                        <p>余白調整、文言改善、チャートのラベル、ビジュアルの仕上げをAIに委任して高品質な最終調整。</p>
                     </div>
                 </div>
             </div>
@@ -213,56 +211,56 @@
         <section id="features" class="features">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-title">Everything You Need for AI-Driven Deck Production</h2>
-                    <p class="section-subtitle">From first draft generation to parallel polish and live URL sharing.</p>
+                    <h2 class="section-title">AI駆動のデッキ制作に必要なすべて</h2>
+                    <p class="section-subtitle">初稿生成から並列改善、ライブURL共有まで。</p>
                 </div>
                 <div class="grid grid-2">
                     <div class="feature-item fade-in">
                         <div class="feature-content">
-                            <h3>Parallel Slide Revisions</h3>
-                            <p>Assign edits to multiple slides simultaneously and shorten review cycles dramatically.</p>
+                            <h3>スライドの並列修正</h3>
+                            <p>複数スライドへの編集を同時に指示し、レビューサイクルを大幅に短縮。</p>
                         </div>
                     </div>
                     <div class="feature-item fade-in">
                         <div class="feature-content">
-                            <h3>AI Detail Adjustment</h3>
-                            <p>Ask AI to improve tone, hierarchy, spacing, and chart readability with precision prompts.</p>
+                            <h3>AIによる細部調整</h3>
+                            <p>トーン、階層構造、余白、チャートの可読性をプロンプトで精密に改善。</p>
                         </div>
                     </div>
                     <div class="feature-item fade-in">
                         <div class="feature-content">
-                            <h3>Live Reload</h3>
-                            <p>See your changes instantly. Hot Module Replacement (HMR) keeps your preview fresh.</p>
+                            <h3>ライブリロード</h3>
+                            <p>変更が即座に反映。HMR（Hot Module Replacement）でプレビューを常に最新に。</p>
                         </div>
                     </div>
                     <div class="feature-item fade-in">
                         <div class="feature-content">
-                            <h3>Built-in Components</h3>
-                            <p>Charts, icons, code blocks, tables, multi-column layouts, math equations, and shapes ready to use.</p>
+                            <h3>組み込みコンポーネント</h3>
+                            <p>チャート、アイコン、コードブロック、テーブル、マルチカラムレイアウト、数式、図形がすぐに使用可能。</p>
                         </div>
                     </div>
                     <div class="feature-item fade-in">
                         <div class="feature-content">
-                            <h3>Cloudflare Tunnel Sharing</h3>
-                            <p>Expose your deck with a shareable URL and collect feedback in real-time with teammates anywhere.</p>
+                            <h3>Cloudflare Tunnelによる共有</h3>
+                            <p>共有URLでデッキを公開し、どこにいてもチームメンバーとリアルタイムでフィードバック。</p>
                         </div>
                     </div>
                     <div class="feature-item fade-in">
                         <div class="feature-content">
-                            <h3>Presenter Mode</h3>
-                            <p>Open a separate fullscreen window for projector output, synced in real-time via BroadcastChannel.</p>
+                            <h3>プレゼンターモード</h3>
+                            <p>BroadcastChannelでリアルタイム同期されたフルスクリーンウィンドウをプロジェクター出力用に表示。</p>
                         </div>
                     </div>
                     <div class="feature-item fade-in">
                         <div class="feature-content">
-                            <h3>PDF Export</h3>
-                            <p>Export decks to high-quality PDF via Playwright for sharing or printing.</p>
+                            <h3>PDFエクスポート</h3>
+                            <p>Playwrightによる高品質PDF出力で、共有や印刷に対応。</p>
                         </div>
                     </div>
                     <div class="feature-item fade-in">
                         <div class="feature-content">
-                            <h3>Two Built-in Image Generation Skills</h3>
-                            <p>Generate photorealistic images via Gemini API and professional SVG diagrams (flowcharts, architecture maps, comparisons, and more) directly from the CLI — both auto-styled to your deck's theme.</p>
+                            <h3>2つの組み込み画像生成スキル</h3>
+                            <p>Gemini APIによるフォトリアリスティック画像と、プロフェッショナルなSVG図（フローチャート、アーキテクチャマップ、比較図など）をCLIから直接生成。デッキのテーマに自動スタイリング。</p>
                         </div>
                     </div>
                 </div>
@@ -273,16 +271,16 @@
         <section id="how-it-works" class="how-it-works">
             <div class="container">
                 <div class="section-header text-center">
-                    <h2 class="section-title">How It Works</h2>
-                    <p class="section-subtitle">From draft generation to parallel refinement in minutes.</p>
+                    <h2 class="section-title">使い方</h2>
+                    <p class="section-subtitle">ドラフト生成から並列改善まで数分で完了。</p>
                 </div>
-                
+
                 <div class="steps">
                     <div class="step fade-in">
                         <div class="step-number">01</div>
                         <div class="step-content">
-                            <h3>Install & Initialize</h3>
-                            <p>Clone the repo and install dependencies.</p>
+                            <h3>インストール・初期設定</h3>
+                            <p>リポジトリをクローンして依存関係をインストール。</p>
                             <div class="code-block">
                                 <pre><code>git clone git@github.com:co-r-e/nipry.git
 cd nipry
@@ -290,36 +288,36 @@ npm install</code></pre>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="step fade-in">
                         <div class="step-number">02</div>
                         <div class="step-content">
-                            <h3>Create the First Draft</h3>
-                            <p>Start Claude Code and generate a complete deck draft from a single instruction.</p>
+                            <h3>最初のドラフトを作成</h3>
+                            <p>Claude Codeを起動し、1つの指示でデッキのドラフトを丸ごと生成。</p>
                             <div class="code-block">
                                 <pre><code>$ claude
 > Create a deck for "Q3 Roadmap" with 12 slides</code></pre>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="step fade-in">
                         <div class="step-number">03</div>
                         <div class="step-content">
-                            <h3>Revise Slides in Parallel</h3>
-                            <p>Batch-request edits for selected slides so agents can work on each slide concurrently.</p>
+                            <h3>スライドを並列で修正</h3>
+                            <p>選択したスライドへの編集を一括指示し、エージェントが各スライドを同時に処理。</p>
                             <div class="code-block">
                                 <pre><code>> Update slides 04, 05, 08 in parallel:
 > tighten copy, improve chart labels, fix spacing</code></pre>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="step fade-in">
                         <div class="step-number">04</div>
                         <div class="step-content">
-                            <h3>Share, Review, and Present</h3>
-                            <p>Use AI for final micro-adjustments, share a live URL via Cloudflare Tunnel, then present when ready.</p>
+                            <h3>共有・レビュー・プレゼン</h3>
+                            <p>AIで最終調整を行い、Cloudflare Tunnelでライブ共有、準備ができたらプレゼン。</p>
                             <div class="code-block">
                                 <pre><code>> Make slide 05 headline sharper and align chart axis labels
 > Expose this deck with Cloudflare Tunnel and share the URL
@@ -334,10 +332,10 @@ npm run dev</code></pre>
         <!-- CTA Section -->
         <section class="cta-section">
             <div class="container text-center">
-                <p class="cta-label">Get Started</p>
-                <h2 class="cta-title">Ready to iterate slides in parallel<br>and present with confidence?</h2>
-                <p class="cta-subtitle">Open source, MIT licensed, and free to use.</p>
-                <a href="https://github.com/co-r-e/nipry" class="btn btn-primary btn-large">Get Started on GitHub</a>
+                <p class="cta-label">はじめる</p>
+                <h2 class="cta-title">スライドを並列で改善し、<br>自信を持ってプレゼンする準備はできましたか？</h2>
+                <p class="cta-subtitle">オープンソース、MITライセンス、無料で利用可能。</p>
+                <a href="https://github.com/co-r-e/nipry" class="btn btn-primary btn-large">GitHubではじめる</a>
             </div>
         </section>
     </main>
@@ -346,17 +344,16 @@ npm run dev</code></pre>
         <div class="container footer-container">
             <div class="footer-left">
                 <div class="logo">
-                    <img src="./assets/nipry-logo.svg" alt="nipry logo" class="logo-img-sm">
+                    <img src="../assets/nipry-logo.svg" alt="nipry logo" class="logo-img-sm">
                 </div>
-                <p class="copyright">© 2026 CORe Inc. All rights reserved.</p>
+                <p class="copyright">&copy; 2026 CORe Inc. All rights reserved.</p>
             </div>
             <div class="footer-right">
                 <a href="https://github.com/co-r-e/nipry" class="footer-link">GitHub</a>
-                <!-- Add other links if necessary -->
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
