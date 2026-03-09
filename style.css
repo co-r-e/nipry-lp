@@ -641,11 +641,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .marquee-left {
-    animation: marquee-scroll-left 60s linear infinite;
+    animation: marquee-scroll-left 120s linear infinite;
 }
 
 .marquee-right {
-    animation: marquee-scroll-right 60s linear infinite;
+    animation: marquee-scroll-right 120s linear infinite;
 }
 
 @keyframes marquee-scroll-left {
@@ -666,10 +666,10 @@ h1, h2, h3, h4, h5, h6 {
         width: 200px;
     }
     .marquee-left {
-        animation-duration: 40s;
+        animation-duration: 80s;
     }
     .marquee-right {
-        animation-duration: 40s;
+        animation-duration: 80s;
     }
 }
 
