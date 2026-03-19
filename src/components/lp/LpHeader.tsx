@@ -9,7 +9,7 @@ interface LpHeaderProps {
 }
 
 export function LpHeader({ dict, locale }: LpHeaderProps): ReactNode {
-  const langHref = locale === "en" ? "/ja" : "/";
+  const langHref = assetUrl(locale === "en" ? "/ja" : "/");
 
   return (
     <header className="header">
@@ -33,7 +33,7 @@ export function LpHeader({ dict, locale }: LpHeaderProps): ReactNode {
             </li>
           </ul>
         </nav>
-        <a href={locale === "en" ? "/" : "/ja"} className="logo">
+        <a href={assetUrl(locale === "en" ? "/" : "/ja")} className="logo">
           <img
             src={assetUrl("/assets/dexcode-logo.svg")}
             alt="DexCode logo"
