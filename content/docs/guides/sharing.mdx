@@ -1,0 +1,82 @@
+---
+title: Sharing & Presenting
+description: Share your DexCode slides via Cloudflare Tunnel, export to PDF/PPTX, or present directly.
+---
+
+## Sharing Options
+
+DexCode provides multiple ways to share your slides with others.
+
+### Cloudflare Tunnel
+
+The fastest way to share a live deck. Ask your AI agent:
+
+```bash
+> Expose this deck via Cloudflare Tunnel and share the URL
+```
+
+Or run the tunnel manually:
+
+```bash
+npx cloudflared tunnel --url http://localhost:3000
+```
+
+This generates a public URL (e.g., `https://abc123.trycloudflare.com`) that anyone can access. The viewer sees your slides in real time — any updates you make are reflected immediately.
+
+<Callout type="warning" title="Security">
+Cloudflare Tunnel URLs are publicly accessible. Do not share confidential content without additional access controls.
+</Callout>
+
+### PDF Export
+
+Generate a high-quality PDF of your deck:
+
+```bash
+npm run export:pdf
+```
+
+This uses Playwright to render each slide at 1920x1080 and produce a print-ready PDF. The output is saved to `exports/deck.pdf`.
+
+### PPTX Export
+
+Export to PowerPoint format for offline sharing:
+
+```bash
+npm run export:pptx
+```
+
+<Callout type="info">
+PPTX export converts each slide to an image-based PowerPoint slide. Interactive components (charts, animations) are rendered as static images.
+</Callout>
+
+## Presenter Mode
+
+Press **P** in the browser or click the presenter mode button to open a two-window presentation setup:
+
+- **Presenter window**: Shows current slide, next slide preview, speaker notes, and timer
+- **Audience window**: Shows the current slide fullscreen (ideal for projector output)
+
+Both windows stay synchronized via **BroadcastChannel API** — no server needed.
+
+### Keyboard Shortcuts
+
+| Key | Action |
+|---|---|
+| `→` or `Space` | Next slide |
+| `←` | Previous slide |
+| `P` | Toggle presenter mode |
+| `F` | Toggle fullscreen |
+| `Esc` | Exit fullscreen/presenter |
+
+## Embedding
+
+Since DexCode decks are standard web pages, you can embed them in other sites using an iframe:
+
+```html
+<iframe
+  src="https://your-tunnel-url.trycloudflare.com"
+  width="100%"
+  height="600"
+  style="border: none; border-radius: 8px;"
+></iframe>
+```

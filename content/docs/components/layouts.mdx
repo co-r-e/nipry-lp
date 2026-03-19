@@ -1,0 +1,123 @@
+---
+title: Layouts
+description: Use built-in layout components to structure your DexCode slides with columns, grids, and split views.
+---
+
+## Layout System
+
+DexCode slides support multiple layout options through frontmatter and components.
+
+## Frontmatter Layouts
+
+Set the layout in your slide's frontmatter:
+
+```mdx
+---
+layout: two-column
+---
+```
+
+### Available Layouts
+
+| Layout | Description |
+|---|---|
+| `default` | Standard single-column with padding |
+| `cover` | Full-bleed cover slide with centered content |
+| `two-column` | Equal two-column split |
+| `three-column` | Three equal columns |
+| `image-left` | Image on left, text on right |
+| `image-right` | Text on left, image on right |
+| `centered` | Vertically and horizontally centered |
+| `dashboard` | Multi-widget grid layout |
+| `section` | Section divider slide |
+
+## Columns Component
+
+For custom column widths, use the `Columns` component:
+
+```mdx
+<Columns widths="40,60">
+
+Left content takes 40% width.
+
+Right content takes 60% width.
+
+</Columns>
+```
+
+### Three Columns
+
+```mdx
+<Columns widths="33,34,33">
+
+**Column 1**
+First item details
+
+**Column 2**
+Second item details
+
+**Column 3**
+Third item details
+
+</Columns>
+```
+
+## CardGrid
+
+Display items in a responsive grid:
+
+```mdx
+<CardGrid cols={3}>
+
+<Card title="Feature A">
+Description of feature A with supporting details.
+</Card>
+
+<Card title="Feature B">
+Description of feature B with supporting details.
+</Card>
+
+<Card title="Feature C">
+Description of feature C with supporting details.
+</Card>
+
+</CardGrid>
+```
+
+## Split Views
+
+### Image + Text
+
+```mdx
+---
+layout: image-left
+image: /images/screenshot.png
+---
+
+# Product Screenshot
+
+This is our latest dashboard interface showing
+real-time metrics and user activity.
+```
+
+### Before & After
+
+```mdx
+<BeforeAfter>
+
+<div>
+**Before**: Manual slide creation in PowerPoint.
+Average time: 4 hours per deck.
+</div>
+
+<div>
+**After**: AI-generated slides with DexCode.
+Average time: 15 minutes per deck.
+</div>
+
+</BeforeAfter>
+```
+
+<Callout type="tip">
+Ask your AI agent to suggest the best layout: "What layout would work best for showing a product screenshot with feature bullets?"
+</Callout>

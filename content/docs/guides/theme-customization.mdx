@@ -1,0 +1,90 @@
+---
+title: Theme Customization
+description: Customize the look and feel of your DexCode slides with themes, colors, and typography.
+---
+
+## Theme Configuration
+
+Every deck has a `deck.config.ts` file that controls its visual appearance:
+
+```typescript
+import { defineConfig } from "dexcode";
+
+export default defineConfig({
+  title: "My Presentation",
+  theme: {
+    // Colors
+    primary: "#e17120",
+    secondary: "#ffb56a",
+    background: "#111111",
+    surface: "#1a1a1a",
+    text: "#e8e8e8",
+    textMuted: "#999999",
+
+    // Typography
+    fontHeading: "Inter, system-ui, sans-serif",
+    fontBody: "Inter, system-ui, sans-serif",
+    fontCode: "Fira Code, monospace",
+
+    // Layout
+    borderRadius: "12px",
+    contentWidth: "1200px",
+  },
+});
+```
+
+## Color Presets
+
+DexCode includes several built-in color presets:
+
+| Preset | Primary | Background | Style |
+|---|---|---|---|
+| `default` | `#e17120` | `#111111` | Dark with orange accent |
+| `ocean` | `#3b82f6` | `#0a1628` | Dark navy with blue |
+| `forest` | `#22c55e` | `#0a1a0e` | Dark green theme |
+| `sunset` | `#f59e0b` | `#1a1008` | Warm amber tones |
+| `minimal` | `#333333` | `#ffffff` | Clean light theme |
+
+Apply a preset:
+
+```typescript
+export default defineConfig({
+  theme: "ocean",
+});
+```
+
+## Custom Backgrounds
+
+Set per-slide backgrounds using frontmatter:
+
+```mdx
+---
+layout: default
+background: "linear-gradient(135deg, #1a1a2e, #16213e)"
+---
+
+# Slide with Custom Background
+```
+
+### Background Options
+
+- **Solid color**: `background: "#1a1a2e"`
+- **Gradient**: `background: "linear-gradient(135deg, #1a1a2e, #16213e)"`
+- **Image**: `background: "url(/images/hero.jpg)"`
+- **Image with overlay**: `background: "url(/images/bg.jpg)"` with `backgroundOverlay: "rgba(0,0,0,0.6)"`
+
+## Component Styling
+
+Built-in components automatically adapt to your theme colors. You can also override individual component styles:
+
+```mdx
+<BarChart
+  data={chartData}
+  colors={["#e17120", "#ffb56a", "#ff8c42"]}
+  gridColor="rgba(255,255,255,0.1)"
+/>
+```
+
+<Callout type="tip" title="AI Styling">
+Ask your AI agent to adjust styling: "Make slide 5 use a dark gradient background with orange accent highlights."
+</Callout>

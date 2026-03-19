@@ -1,0 +1,93 @@
+---
+title: CLI Commands
+description: Complete reference for DexCode's command-line interface.
+---
+
+## Commands
+
+DexCode is managed through npm scripts defined in `package.json`.
+
+## Development
+
+### `npm run dev`
+
+Start the development server with hot module replacement.
+
+```bash
+npm run dev
+```
+
+<ApiTable data={[
+  { flag: "--port", type: "number", default: "3000", description: "Port to run the dev server on" },
+  { flag: "--host", type: "string", default: "localhost", description: "Host to bind to (use 0.0.0.0 for network access)" },
+  { flag: "--open", type: "boolean", default: "false", description: "Open browser automatically" },
+]} />
+
+## Build & Export
+
+### `npm run build`
+
+Build the deck for production deployment.
+
+```bash
+npm run build
+```
+
+### `npm run export:pdf`
+
+Export the deck to a PDF file using Playwright.
+
+```bash
+npm run export:pdf
+```
+
+<ApiTable data={[
+  { flag: "--output", type: "string", default: "exports/deck.pdf", description: "Output file path" },
+  { flag: "--width", type: "number", default: "1920", description: "Slide width in pixels" },
+  { flag: "--height", type: "number", default: "1080", description: "Slide height in pixels" },
+  { flag: "--delay", type: "number", default: "500", description: "Delay between slides in ms (for animations)" },
+]} />
+
+### `npm run export:pptx`
+
+Export the deck to PowerPoint format.
+
+```bash
+npm run export:pptx
+```
+
+## Sharing
+
+### `npm run tunnel`
+
+Start a Cloudflare Tunnel to share the dev server publicly.
+
+```bash
+npm run tunnel
+```
+
+This requires `cloudflared` to be installed. The command starts the dev server and creates a public tunnel URL.
+
+## Utilities
+
+### `npm run new`
+
+Create a new slide file:
+
+```bash
+npm run new slide-04
+```
+
+This creates `slides/slide-04.mdx` with default frontmatter.
+
+### `npm run reorder`
+
+Renumber slide files to maintain sequential ordering:
+
+```bash
+npm run reorder
+```
+
+<Callout type="info">
+All DexCode commands are standard npm scripts. You can inspect and modify them in `package.json`.
+</Callout>

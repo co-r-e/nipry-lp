@@ -1,0 +1,104 @@
+---
+title: Creating Decks
+description: Learn how to create slide decks from scratch using AI agents and DexCode's MDX format.
+---
+
+## Deck Structure
+
+Every DexCode deck is a directory containing MDX slide files and a configuration file:
+
+```
+my-deck/
+├── deck.config.ts     # Theme, title, metadata
+├── slides/
+│   ├── slide-01.mdx   # Each file = one slide
+│   ├── slide-02.mdx
+│   └── slide-03.mdx
+└── public/
+    └── images/        # Static assets
+```
+
+## The deck.config.ts File
+
+The deck configuration defines your deck's metadata and theme:
+
+```typescript
+import { defineConfig } from "dexcode";
+
+export default defineConfig({
+  title: "Q3 Roadmap Review",
+  author: "Engineering Team",
+  date: "2026-03-19",
+  theme: {
+    primary: "#e17120",
+    background: "#111111",
+    text: "#e8e8e8",
+  },
+});
+```
+
+## Writing Slides in MDX
+
+Each slide is an MDX file that combines Markdown with React components:
+
+```mdx
+---
+layout: default
+---
+
+# Our Product Roadmap
+
+## Q3 Priorities
+
+- **Performance**: 2x faster rendering
+- **Integrations**: Slack, GitHub, Linear
+- **AI Features**: Smart suggestions
+
+<BarChart
+  data={[
+    { label: "Q1", value: 120 },
+    { label: "Q2", value: 180 },
+    { label: "Q3", value: 250 },
+  ]}
+/>
+```
+
+## AI-Assisted Creation
+
+The most efficient way to create decks is through AI agents:
+
+### Single-Prompt Generation
+
+```bash
+> Create a 12-slide investor pitch deck.
+  Cover: company name "Acme", tagline "Build faster".
+  Include: problem, solution, market size, traction, team, financials, ask.
+```
+
+### Context-Aware Generation
+
+Point the agent at your project for context-aware slides:
+
+```bash
+> Create a sprint review deck with 8 slides.
+  Summarize the work from ./my-project since last Monday.
+  Focus on the API changes and the new dashboard feature.
+```
+
+<Callout type="tip" title="Pro Tip">
+The more context you give the agent, the better the output. Reference specific files, directories, or git history for accurate content.
+</Callout>
+
+## Slide Layouts
+
+DexCode includes 100+ built-in slide templates. Specify a layout in the frontmatter:
+
+```mdx
+---
+layout: two-column
+---
+```
+
+Available layouts include `default`, `cover`, `two-column`, `three-column`, `image-left`, `image-right`, `centered`, `dashboard`, and many more.
+
+<LinkCard href="/docs/components/overview" title="Components" description="Explore all built-in components for your slides." />

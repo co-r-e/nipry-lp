@@ -1,0 +1,35 @@
+---
+title: Introduction
+description: DexCode is an AI-first slide authoring and refinement tool for developers who never want to leave their terminal.
+---
+
+## What is DexCode?
+
+DexCode is an open-source slide authoring tool designed for developers. Instead of switching to PowerPoint or Google Slides, you create and refine presentations directly from your terminal using AI coding agents like **Claude Code**, **Codex CLI**, **Gemini CLI**, or **Cursor**.
+
+Slides are written as **MDX files** — Markdown with React components — and rendered in real-time with hot module replacement. Every change you make (or your AI agent makes) is reflected instantly in the browser.
+
+## Key Concepts
+
+- **AI-First**: Your coding agent generates and edits slide files. You prompt, it builds.
+- **Per-Slide Parallel Editing**: After the initial draft, assign one agent per slide for simultaneous refinements.
+- **Live Preview**: Hot reload keeps your browser preview in sync as files change.
+- **Shareable**: Use Cloudflare Tunnel to share a live URL with your team, or export to PDF/PPTX.
+
+## Who is DexCode For?
+
+DexCode is built for:
+
+- **Developers** who create sprint reviews, technical presentations, or pitch decks
+- **Teams** that use AI coding agents in their daily workflow
+- **Anyone** who wants to stay in their terminal and avoid context switching
+
+## How It Works
+
+1. Clone the DexCode repo and run `npm install && npm run dev`
+2. Open your AI agent (e.g., `claude`) and prompt it to create slides
+3. The agent generates MDX files; slides appear in the browser instantly
+4. Refine slides with follow-up prompts — in parallel if you want
+5. Share via Cloudflare Tunnel, export to PDF, or present directly
+
+<LinkCard href="/docs/getting-started/installation" title="Installation" description="Set up DexCode on your machine in under a minute." />

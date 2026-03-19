@@ -1,0 +1,87 @@
+---
+title: Charts
+description: Use built-in chart components to visualize data in your DexCode slides.
+---
+
+## Chart Components
+
+DexCode includes several chart types that automatically style themselves to match your deck theme.
+
+## BarChart
+
+Display data as vertical or horizontal bars:
+
+```mdx
+<BarChart
+  data={[
+    { label: "Jan", value: 120 },
+    { label: "Feb", value: 180 },
+    { label: "Mar", value: 250 },
+    { label: "Apr", value: 200 },
+  ]}
+  title="Monthly Revenue ($K)"
+  color="#e17120"
+/>
+```
+
+### Props
+
+<ApiTable data={[
+  { flag: "data", type: "Array<{label, value}>", description: "Chart data points", required: true },
+  { flag: "title", type: "string", description: "Chart title displayed above the chart" },
+  { flag: "color", type: "string", default: "theme.primary", description: "Bar color" },
+  { flag: "horizontal", type: "boolean", default: "false", description: "Render as horizontal bars" },
+  { flag: "showValues", type: "boolean", default: "true", description: "Show values on bars" },
+]} />
+
+## LineChart
+
+Display trends over time:
+
+```mdx
+<LineChart
+  data={[
+    { label: "W1", series1: 10, series2: 15 },
+    { label: "W2", series1: 25, series2: 20 },
+    { label: "W3", series1: 30, series2: 35 },
+    { label: "W4", series1: 45, series2: 40 },
+  ]}
+  series={["series1", "series2"]}
+  labels={["Users", "Sessions"]}
+/>
+```
+
+## PieChart
+
+Show proportional data:
+
+```mdx
+<PieChart
+  data={[
+    { label: "Desktop", value: 55 },
+    { label: "Mobile", value: 35 },
+    { label: "Tablet", value: 10 },
+  ]}
+  donut={true}
+/>
+```
+
+## AreaChart
+
+Filled area charts for volume visualization:
+
+```mdx
+<AreaChart
+  data={[
+    { label: "Q1", value: 1200 },
+    { label: "Q2", value: 1800 },
+    { label: "Q3", value: 2400 },
+    { label: "Q4", value: 3200 },
+  ]}
+  gradient={true}
+/>
+```
+
+<Callout type="tip" title="AI Chart Generation">
+Tell your AI agent: "Add a bar chart showing monthly active users from January to June with the values 1200, 1500, 1800, 2100, 2500, 3000."
+</Callout>

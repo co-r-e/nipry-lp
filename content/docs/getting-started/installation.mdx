@@ -1,0 +1,79 @@
+---
+title: Installation
+description: Clone the DexCode repository and install dependencies to start creating slides.
+---
+
+## Prerequisites
+
+- **Node.js** 18 or later
+- **npm** (included with Node.js)
+- An AI coding agent (Claude Code, Codex CLI, Gemini CLI, Cursor, etc.)
+
+## Install DexCode
+
+<Steps>
+
+<div>
+**Clone the repository**
+
+```bash
+git clone git@github.com:co-r-e/dexcode.git DexCode
+cd DexCode
+```
+</div>
+
+<div>
+**Install dependencies**
+
+```bash
+npm install
+```
+</div>
+
+<div>
+**Start the development server**
+
+```bash
+npm run dev
+```
+
+Your slides will be available at `http://localhost:3000`.
+</div>
+
+</Steps>
+
+## Verify Installation
+
+Open your browser and navigate to `http://localhost:3000`. You should see the default DexCode slide deck with sample slides.
+
+<Callout type="tip" title="Hot Reload">
+DexCode uses Vite's HMR (Hot Module Replacement). Any changes to MDX slide files are reflected instantly in the browser — no manual refresh needed.
+</Callout>
+
+## Project Structure
+
+<FileTree data={[
+  { name: "DexCode", type: "directory", children: [
+    { name: "slides", type: "directory", highlight: true, children: [
+      { name: "slide-01.mdx", type: "file", highlight: true },
+      { name: "slide-02.mdx", type: "file", highlight: true },
+      { name: "slide-03.mdx", type: "file", highlight: true }
+    ]},
+    { name: "deck.config.ts", type: "file", highlight: true },
+    { name: "components", type: "directory", children: [
+      { name: "Charts.tsx", type: "file" },
+      { name: "Icons.tsx", type: "file" }
+    ]},
+    { name: "public", type: "directory", children: [
+      { name: "images", type: "directory" }
+    ]},
+    { name: "package.json", type: "file" },
+    { name: "next.config.ts", type: "file" }
+  ]}
+]} />
+
+- **`slides/`** — Your MDX slide files live here. Each file is one slide.
+- **`deck.config.ts`** — Deck-level configuration (title, theme, author).
+- **`components/`** — Built-in and custom React components for slides.
+
+<LinkCard href="/docs/getting-started/quick-start" title="Quick Start" description="Create your first deck in under 5 minutes." />

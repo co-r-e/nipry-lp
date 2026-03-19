@@ -1,0 +1,91 @@
+---
+title: Quick Start
+description: Create your first slide deck with DexCode and an AI agent in under 5 minutes.
+---
+
+## Create Your First Deck
+
+Once DexCode is installed and the dev server is running, open your AI coding agent and start prompting.
+
+### Using Claude Code
+
+<Terminal title="Terminal">
+```
+$ claude
+> Create a 5-slide pitch deck for a developer tool called "FastAPI Dashboard".
+  Include a cover slide, problem statement, solution overview, features, and CTA.
+```
+</Terminal>
+
+Claude Code will generate MDX files in the `slides/` directory. As each file is saved, the browser preview updates instantly.
+
+### Using Other Agents
+
+DexCode works with any agent that can edit files:
+
+<Tabs items="Codex CLI,Gemini CLI,Cursor">
+
+<div>
+```bash
+$ codex "Create a 5-slide pitch deck in the DexCode project"
+```
+</div>
+
+<div>
+```bash
+$ gemini "Create a 5-slide pitch deck in the DexCode project"
+```
+</div>
+
+<div>
+Open the DexCode project in Cursor and use the AI chat to generate slides.
+</div>
+
+</Tabs>
+
+## Refine Your Slides
+
+After the initial draft, refine individual slides with follow-up prompts:
+
+```bash
+> Make the cover slide headline more concise
+> Add a bar chart to slide 3 showing user growth
+> Fix spacing on slide 4
+```
+
+### Parallel Editing
+
+For faster iteration, edit multiple slides simultaneously:
+
+```bash
+> Update slides 2, 3, and 5 in parallel:
+  - Slide 2: tighten the problem statement
+  - Slide 3: add a comparison table
+  - Slide 5: make the CTA more compelling
+```
+
+The agent will spawn subagents to edit each slide concurrently.
+
+## Present & Share
+
+<Steps>
+
+<div>
+**Presenter Mode** — Press `P` in the browser to open presenter mode with a separate fullscreen window.
+</div>
+
+<div>
+**Export to PDF** — Run `npm run export:pdf` to generate a high-quality PDF via Playwright.
+</div>
+
+<div>
+**Share via Tunnel** — Ask your agent to expose the deck via Cloudflare Tunnel for real-time sharing.
+</div>
+
+</Steps>
+
+<Callout type="info">
+DexCode decks are live web pages. Anyone with the URL can view the latest version in real time.
+</Callout>
+
+<LinkCard href="/docs/guides/creating-decks" title="Creating Decks" description="Learn advanced techniques for deck creation with AI agents." />

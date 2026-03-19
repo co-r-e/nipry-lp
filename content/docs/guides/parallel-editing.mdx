@@ -1,0 +1,74 @@
+---
+title: Parallel Editing
+description: Edit multiple slides simultaneously using AI agent subprocesses for faster iteration.
+---
+
+## What is Parallel Editing?
+
+Parallel editing is DexCode's core differentiator. Instead of revising slides one at a time, you can assign edits to multiple slides simultaneously. Your AI agent spawns subagents — one per slide — that work concurrently.
+
+## How It Works
+
+When you prompt an agent like Claude Code with a batch edit instruction, it:
+
+1. Identifies which slides need changes
+2. Spawns a subagent for each target slide
+3. Each subagent edits its assigned MDX file independently
+4. Hot reload updates the browser preview as each file is saved
+
+```bash
+> Update slides 3, 5, and 8 in parallel:
+  - Slide 3: Replace the bullet list with a comparison table
+  - Slide 5: Add a pie chart showing market share data
+  - Slide 8: Tighten the copy and improve visual hierarchy
+```
+
+## Benefits
+
+| Traditional Workflow | Parallel Editing |
+|---|---|
+| Edit slide 3, wait, review | All 3 slides edited simultaneously |
+| Edit slide 5, wait, review | Review all changes at once |
+| Edit slide 8, wait, review | Single review cycle |
+| ~15 minutes | ~5 minutes |
+
+## Best Practices
+
+### Be Specific
+
+Give clear, actionable instructions for each slide:
+
+```bash
+# Good — specific and actionable
+> Slide 4: Replace "We're growing fast" with actual metrics.
+  Use the revenue numbers from Q2: $1.2M ARR, 45% QoQ growth.
+
+# Less effective — vague
+> Make slide 4 better
+```
+
+### Batch Related Changes
+
+Group related edits into a single parallel request:
+
+```bash
+> For slides 2-6, apply consistent styling:
+  - Use the company's brand colors
+  - Ensure all charts use the same color palette
+  - Standardize heading sizes
+```
+
+### Use Micro-Tuning
+
+For final polish, use AI micro-tuning on individual elements:
+
+```bash
+> On slide 7:
+  - Align the chart axis labels to the grid
+  - Reduce the padding between the title and subtitle
+  - Make the footnote text 12px and 60% opacity
+```
+
+<Callout type="info">
+Parallel editing works best with agents that support subagent spawning, such as Claude Code's Agent tool.
+</Callout>

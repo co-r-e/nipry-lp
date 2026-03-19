@@ -1,0 +1,90 @@
+---
+title: Configuration
+description: Complete reference for deck.config.ts and slide frontmatter options.
+---
+
+## deck.config.ts
+
+The deck configuration file defines project-level settings.
+
+```typescript
+import { defineConfig } from "dexcode";
+
+export default defineConfig({
+  // Metadata
+  title: "My Presentation",
+  author: "Your Name",
+  date: "2026-03-19",
+
+  // Theme
+  theme: {
+    primary: "#e17120",
+    secondary: "#ffb56a",
+    background: "#111111",
+    surface: "#1a1a1a",
+    text: "#e8e8e8",
+    textMuted: "#999999",
+    fontHeading: "Inter, system-ui, sans-serif",
+    fontBody: "Inter, system-ui, sans-serif",
+    fontCode: "Fira Code, monospace",
+    borderRadius: "12px",
+    contentWidth: "1200px",
+  },
+
+  // Slide defaults
+  defaults: {
+    layout: "default",
+    transition: "slide",
+  },
+
+  // Export settings
+  export: {
+    pdf: {
+      width: 1920,
+      height: 1080,
+      format: "landscape",
+    },
+  },
+});
+```
+
+## Configuration Options
+
+<ApiTable data={[
+  { flag: "title", type: "string", description: "Deck title shown in browser tab and exports", required: true },
+  { flag: "author", type: "string", description: "Author name for metadata" },
+  { flag: "date", type: "string", description: "Presentation date (ISO format)" },
+  { flag: "theme", type: "string | ThemeConfig", default: "default", description: "Theme preset name or custom theme object" },
+  { flag: "defaults.layout", type: "string", default: "default", description: "Default layout for slides without explicit layout" },
+  { flag: "defaults.transition", type: "string", default: "slide", description: "Default slide transition effect" },
+  { flag: "export.pdf.width", type: "number", default: "1920", description: "PDF export width in pixels" },
+  { flag: "export.pdf.height", type: "number", default: "1080", description: "PDF export height in pixels" },
+]} />
+
+## Slide Frontmatter
+
+Each MDX slide file can include frontmatter to override defaults:
+
+```mdx
+---
+layout: cover
+background: "linear-gradient(135deg, #1a1a2e, #111)"
+transition: fade
+notes: "Remember to mention the Q2 numbers here."
+---
+```
+
+### Frontmatter Fields
+
+<ApiTable data={[
+  { flag: "layout", type: "string", default: "default", description: "Slide layout template" },
+  { flag: "background", type: "string", description: "CSS background value (color, gradient, or image URL)" },
+  { flag: "backgroundOverlay", type: "string", description: "Overlay color for background images" },
+  { flag: "transition", type: "string", default: "slide", description: "Transition effect (slide, fade, none)" },
+  { flag: "notes", type: "string", description: "Speaker notes shown in presenter mode" },
+  { flag: "class", type: "string", description: "Additional CSS classes for the slide container" },
+]} />
+
+<Callout type="tip">
+You can also configure theme settings by asking your AI agent: "Change the primary color to blue and use a light background."
+</Callout>
