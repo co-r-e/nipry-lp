@@ -17,77 +17,59 @@ Start the development server with hot module replacement.
 npm run dev
 ```
 
-<ApiTable data={[
-  { flag: "--port", type: "number", default: "3000", description: "Port to run the dev server on" },
-  { flag: "--host", type: "string", default: "localhost", description: "Host to bind to (use 0.0.0.0 for network access)" },
-  { flag: "--open", type: "boolean", default: "false", description: "Open browser automatically" },
-]} />
-
-## Build & Export
+Opens at `http://localhost:3000` by default. Navigate to `http://localhost:3000/<deck-name>` to view a specific deck.
 
 ### `npm run build`
 
-Build the deck for production deployment.
+Build the project for production deployment.
 
 ```bash
 npm run build
 ```
 
-### `npm run export:pdf`
+### `npm run start`
 
-Export the deck to a PDF file using Playwright.
-
-```bash
-npm run export:pdf
-```
-
-<ApiTable data={[
-  { flag: "--output", type: "string", default: "exports/deck.pdf", description: "Output file path" },
-  { flag: "--width", type: "number", default: "1920", description: "Slide width in pixels" },
-  { flag: "--height", type: "number", default: "1080", description: "Slide height in pixels" },
-  { flag: "--delay", type: "number", default: "500", description: "Delay between slides in ms (for animations)" },
-]} />
-
-### `npm run export:pptx`
-
-Export the deck to PowerPoint format.
+Start the production server after building.
 
 ```bash
-npm run export:pptx
+npm run start
 ```
 
-## Sharing
+### `npm run lint`
 
-### `npm run tunnel`
-
-Start a Cloudflare Tunnel to share the dev server publicly.
+Run ESLint to check code quality.
 
 ```bash
-npm run tunnel
+npm run lint
 ```
 
-This requires `cloudflared` to be installed. The command starts the dev server and creates a public tunnel URL.
+## Export
 
-## Utilities
+PDF and PPTX export are available through the browser UI. When viewing a deck, use the export buttons in the toolbar to generate exports.
 
-### `npm run new`
-
-Create a new slide file:
-
-```bash
-npm run new slide-04
-```
-
-This creates `slides/slide-04.mdx` with default frontmatter.
-
-### `npm run reorder`
-
-Renumber slide files to maintain sequential ordering:
-
-```bash
-npm run reorder
-```
+- **PDF** — Renders each slide as a JPEG image and combines them into a PDF using jsPDF
+- **PPTX** — Renders each slide as a JPEG image and inserts them into a PowerPoint file using pptxgenjs
 
 <Callout type="info">
+Export is browser-based — no additional CLI commands are needed. The export functions use html-to-image to capture each slide at full resolution.
+</Callout>
+
+## Sharing via Cloudflare Tunnel
+
+DexCode includes `cloudflared` as a dependency. The tunnel can be started through the UI or by asking your AI agent:
+
+```bash
+> Expose this deck via Cloudflare Tunnel and share the URL
+```
+
+Alternatively, you can start a tunnel manually:
+
+```bash
+npx cloudflared tunnel --url http://localhost:3000
+```
+
+This generates a public URL (e.g., `https://abc123.trycloudflare.com`) that anyone can access.
+
+<Callout type="tip">
 All DexCode commands are standard npm scripts. You can inspect and modify them in `package.json`.
 </Callout>

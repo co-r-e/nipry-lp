@@ -9,13 +9,13 @@ DexCode provides multiple ways to share your slides with others.
 
 ### Cloudflare Tunnel
 
-The fastest way to share a live deck. Ask your AI agent:
+The fastest way to share a live deck. DexCode includes `cloudflared` as a dependency and has built-in tunnel management. Ask your AI agent:
 
 ```bash
 > Expose this deck via Cloudflare Tunnel and share the URL
 ```
 
-Or run the tunnel manually:
+Or start a tunnel manually:
 
 ```bash
 npx cloudflared tunnel --url http://localhost:3000
@@ -29,29 +29,23 @@ Cloudflare Tunnel URLs are publicly accessible. Do not share confidential conten
 
 ### PDF Export
 
-Generate a high-quality PDF of your deck:
+Generate a PDF of your deck from the browser toolbar. Each slide is captured as a high-resolution image using html-to-image and combined into a PDF using jsPDF.
 
-```bash
-npm run export:pdf
-```
-
-This uses Playwright to render each slide at 1920x1080 and produce a print-ready PDF. The output is saved to `exports/deck.pdf`.
+<Callout type="info">
+PDF export runs entirely in the browser — no additional tools or CLI commands are required.
+</Callout>
 
 ### PPTX Export
 
-Export to PowerPoint format for offline sharing:
-
-```bash
-npm run export:pptx
-```
+Export to PowerPoint format from the browser toolbar. Each slide is rendered as an image and inserted into a PPTX file using pptxgenjs.
 
 <Callout type="info">
-PPTX export converts each slide to an image-based PowerPoint slide. Interactive components (charts, animations) are rendered as static images.
+PPTX export creates image-based slides. Interactive components (charts, animations) are rendered as static snapshots.
 </Callout>
 
 ## Presenter Mode
 
-Press **P** in the browser or click the presenter mode button to open a two-window presentation setup:
+Use the presenter mode button in the toolbar to open a two-window presentation setup:
 
 - **Presenter window**: Shows current slide, next slide preview, speaker notes, and timer
 - **Audience window**: Shows the current slide fullscreen (ideal for projector output)
@@ -64,9 +58,8 @@ Both windows stay synchronized via **BroadcastChannel API** — no server needed
 |---|---|
 | `→` or `Space` | Next slide |
 | `←` | Previous slide |
-| `P` | Toggle presenter mode |
-| `F` | Toggle fullscreen |
-| `Esc` | Exit fullscreen/presenter |
+| `f` | Toggle fullscreen |
+| `Esc` | Exit fullscreen |
 
 ## Embedding
 

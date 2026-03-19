@@ -5,85 +5,117 @@ description: Complete reference for deck.config.ts and slide frontmatter options
 
 ## deck.config.ts
 
-The deck configuration file defines project-level settings.
+Each deck directory contains a `deck.config.ts` file that defines project-level settings. The `defineConfig` helper is imported from the DexCode source:
 
 ```typescript
-import { defineConfig } from "dexcode";
+import { defineConfig } from "../../src/lib/deck-config";
 
 export default defineConfig({
-  // Metadata
   title: "My Presentation",
-  author: "Your Name",
-  date: "2026-03-19",
 
-  // Theme
+  // Theme (required)
   theme: {
-    primary: "#e17120",
-    secondary: "#ffb56a",
-    background: "#111111",
-    surface: "#1a1a1a",
-    text: "#e8e8e8",
-    textMuted: "#999999",
-    fontHeading: "Inter, system-ui, sans-serif",
-    fontBody: "Inter, system-ui, sans-serif",
-    fontCode: "Fira Code, monospace",
-    borderRadius: "12px",
-    contentWidth: "1200px",
-  },
-
-  // Slide defaults
-  defaults: {
-    layout: "default",
-    transition: "slide",
-  },
-
-  // Export settings
-  export: {
-    pdf: {
-      width: 1920,
-      height: 1080,
-      format: "landscape",
+    colors: {
+      primary: "#02001A",
+      secondary: "#02001A",
+      background: "#FFFFFF",
+      text: "#1a1a1a",
+    },
+    fonts: {
+      heading: "Inter, sans-serif",
+      body: "Noto Sans JP, sans-serif",
     },
   },
+
+  // Optional: Logo overlay
+  logo: {
+    src: "/my-logo.svg",
+    position: "top-right",
+  },
+
+  // Optional: Copyright text
+  copyright: {
+    text: "© 2026 My Company",
+    position: "bottom-left",
+  },
+
+  // Optional: Page numbers
+  pageNumber: {
+    position: "bottom-right",
+    hideOnCover: true,
+  },
+
+  // Optional: Default transition
+  transition: "fade",
 });
 ```
 
 ## Configuration Options
 
 <ApiTable data={[
-  { flag: "title", type: "string", description: "Deck title shown in browser tab and exports", required: true },
-  { flag: "author", type: "string", description: "Author name for metadata" },
-  { flag: "date", type: "string", description: "Presentation date (ISO format)" },
-  { flag: "theme", type: "string | ThemeConfig", default: "default", description: "Theme preset name or custom theme object" },
-  { flag: "defaults.layout", type: "string", default: "default", description: "Default layout for slides without explicit layout" },
-  { flag: "defaults.transition", type: "string", default: "slide", description: "Default slide transition effect" },
-  { flag: "export.pdf.width", type: "number", default: "1920", description: "PDF export width in pixels" },
-  { flag: "export.pdf.height", type: "number", default: "1080", description: "PDF export height in pixels" },
+  { flag: "title", type: "string", description: "Deck title shown in browser tab", required: true },
+  { flag: "theme", type: "DeckTheme", description: "Theme object with colors, fonts, spacing, and radius", required: true },
+  { flag: "theme.colors.primary", type: "string", description: "Primary brand color", required: true },
+  { flag: "theme.colors.secondary", type: "string", description: "Secondary color" },
+  { flag: "theme.colors.accent", type: "string", description: "Accent highlight color" },
+  { flag: "theme.colors.background", type: "string", description: "Slide background color" },
+  { flag: "theme.colors.text", type: "string", description: "Main text color" },
+  { flag: "theme.colors.textMuted", type: "string", description: "Muted text color" },
+  { flag: "theme.colors.surface", type: "string", description: "Card/surface background color" },
+  { flag: "theme.fonts.heading", type: "string", description: "Heading font family" },
+  { flag: "theme.fonts.body", type: "string", description: "Body text font family" },
+  { flag: "theme.fonts.mono", type: "string", description: "Monospace font family" },
+  { flag: "theme.radius", type: "string", description: "Border radius for cards and components" },
+  { flag: "logo", type: "object", description: "Logo overlay with src and position" },
+  { flag: "logo.position", type: "string", description: "top-left, top-center, top-right, bottom-left, bottom-center, bottom-right" },
+  { flag: "copyright", type: "object", description: "Copyright text overlay" },
+  { flag: "copyright.position", type: "string", description: "bottom-left, bottom-center, bottom-right" },
+  { flag: "pageNumber", type: "object", description: "Page number overlay" },
+  { flag: "pageNumber.hideOnCover", type: "boolean", default: "false", description: "Hide page number on cover slides" },
+  { flag: "transition", type: "string", default: "slide", description: "Default slide transition: fade, slide, none" },
+  { flag: "accentLine", type: "object", description: "Vertical accent line decoration" },
 ]} />
 
 ## Slide Frontmatter
 
-Each MDX slide file can include frontmatter to override defaults:
+Each MDX slide file can include frontmatter to configure that slide:
 
 ```mdx
 ---
-layout: cover
+type: cover
 background: "linear-gradient(135deg, #1a1a2e, #111)"
 transition: fade
 notes: "Remember to mention the Q2 numbers here."
+verticalAlign: center
 ---
 ```
 
 ### Frontmatter Fields
 
 <ApiTable data={[
-  { flag: "layout", type: "string", default: "default", description: "Slide layout template" },
+  { flag: "type", type: "SlideType", default: "content", description: "Slide type (see available types below)", required: true },
   { flag: "background", type: "string", description: "CSS background value (color, gradient, or image URL)" },
-  { flag: "backgroundOverlay", type: "string", description: "Overlay color for background images" },
-  { flag: "transition", type: "string", default: "slide", description: "Transition effect (slide, fade, none)" },
+  { flag: "transition", type: "string", default: "slide", description: "Transition effect: fade, slide, none" },
   { flag: "notes", type: "string", description: "Speaker notes shown in presenter mode" },
-  { flag: "class", type: "string", description: "Additional CSS classes for the slide container" },
+  { flag: "verticalAlign", type: "string", default: "top", description: "Vertical alignment: top, center" },
 ]} />
+
+### Available Slide Types
+
+| Type | Description |
+|---|---|
+| `content` | Standard single-column slide (default) |
+| `cover` | Full-bleed cover slide with centered content |
+| `section` | Section divider slide |
+| `comparison` | Side-by-side comparison layout |
+| `stats` | Statistics and metrics display |
+| `timeline` | Timeline visualization |
+| `image-left` | Image on left, text on right |
+| `image-right` | Text on left, image on right |
+| `image-full` | Full-bleed image slide |
+| `quote` | Quotation slide |
+| `agenda` | Agenda/table of contents slide |
+| `ending` | Thank you / closing slide |
 
 <Callout type="tip">
 You can also configure theme settings by asking your AI agent: "Change the primary color to blue and use a light background."

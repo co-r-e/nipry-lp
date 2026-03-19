@@ -1,15 +1,13 @@
 ---
 title: Code Blocks
-description: Display syntax-highlighted code in your DexCode slides with theme-aware styling.
+description: Display syntax-highlighted code in your DexCode slides.
 ---
 
 ## Code Blocks
 
-DexCode uses **Shiki** for syntax highlighting with the One Dark Pro theme. Code blocks are automatically styled to match your deck's dark theme.
+DexCode renders code blocks with syntax highlighting. Use standard Markdown fenced code blocks with a language identifier.
 
 ## Basic Usage
-
-Use standard Markdown fenced code blocks with a language identifier:
 
 ```typescript
 function greet(name: string): string {
@@ -19,7 +17,7 @@ function greet(name: string): string {
 
 ## Supported Languages
 
-DexCode supports 100+ programming languages through Shiki, including:
+DexCode supports a wide range of programming languages, including:
 
 - TypeScript / JavaScript
 - Python
@@ -36,16 +34,23 @@ DexCode supports 100+ programming languages through Shiki, including:
 
 ## Multi-Language Code
 
-Show code in multiple languages using the Tabs component. Each tab contains a code block in a different language, letting viewers switch between implementations.
+Show code in multiple languages side by side using the Columns component:
 
-### TypeScript Example
+```mdx
+<Columns widths="50,50">
+<Column>
+
+### TypeScript
 
 ```typescript
 const result = await fetch("/api/data");
 const data = await result.json();
 ```
 
-### Python Example
+</Column>
+<Column>
+
+### Python
 
 ```python
 import requests
@@ -53,17 +58,13 @@ result = requests.get("/api/data")
 data = result.json()
 ```
 
-### Go Example
-
-```go
-resp, err := http.Get("/api/data")
-defer resp.Body.Close()
-data, _ := io.ReadAll(resp.Body)
+</Column>
+</Columns>
 ```
 
 ## Terminal Blocks
 
-For shell commands, use the Terminal component to render a styled terminal window:
+For shell commands, use standard bash code blocks:
 
 ```bash
 $ git clone git@github.com:co-r-e/dexcode.git
@@ -75,17 +76,6 @@ $ npm run dev
 
 Pair code with descriptive text using the Columns component. Place the code block on one side and explanation on the other for a clean layout.
 
-```typescript
-// Define your slide configuration
-export default defineConfig({
-  title: "Sprint Review",
-  slides: 12,
-  theme: "default",
-});
-```
-
-The configuration file controls deck metadata, slide count targets, and visual theme selection. All settings can be overridden per-slide in the MDX frontmatter.
-
 <Callout type="info">
-Code blocks include a copy-to-clipboard button that appears on hover. This works in both preview and presenter mode.
+Code blocks are automatically styled to match your deck's theme colors.
 </Callout>

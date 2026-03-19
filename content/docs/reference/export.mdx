@@ -1,92 +1,63 @@
 ---
 title: Export Options
-description: Export DexCode slides to PDF, PPTX, or static HTML for offline sharing.
+description: Export DexCode slides to PDF, PPTX, or deploy as a static site.
 ---
 
 ## Export Formats
 
-DexCode supports multiple export formats for different use cases.
+DexCode supports multiple export formats for different use cases. Export is available through the browser UI when viewing a deck.
 
 ## PDF Export
 
-Generate a high-quality PDF using Playwright's headless browser:
-
-```bash
-npm run export:pdf
-```
+Generate a PDF of your deck directly from the browser toolbar. Each slide is rendered as a high-resolution JPEG image and combined into a PDF using jsPDF.
 
 ### How It Works
 
-1. Playwright launches a headless Chromium browser
-2. Each slide is rendered at the configured resolution (default: 1920x1080)
-3. Slides are captured as PDF pages in landscape orientation
-4. The output is saved to `exports/deck.pdf`
+1. Each slide is captured at full resolution using html-to-image
+2. The DOM waits for images, fonts, and animations to stabilize before capture
+3. Slides are rendered as JPEG images and inserted into a PDF
+4. The output is downloaded via the browser
 
-### Configuration
-
-Customize PDF export in `deck.config.ts`:
-
-```typescript
-export default defineConfig({
-  export: {
-    pdf: {
-      width: 1920,
-      height: 1080,
-      format: "landscape",
-      margin: { top: 0, right: 0, bottom: 0, left: 0 },
-    },
-  },
-});
-```
-
-<Callout type="warning">
-PDF export requires Playwright to be installed. Run `npx playwright install chromium` if you haven't set it up yet.
+<Callout type="info">
+PDF export runs entirely in the browser — no server-side rendering or Playwright installation is required.
 </Callout>
 
 ## PPTX Export
 
-Export to PowerPoint format:
-
-```bash
-npm run export:pptx
-```
-
-Each slide is rendered as a high-resolution image and inserted into a PPTX file. This preserves the exact visual appearance of your slides.
+Export to PowerPoint format from the browser toolbar. Each slide is rendered as a high-resolution image and inserted into a PPTX file using pptxgenjs.
 
 <Callout type="info">
 PPTX export creates image-based slides. Interactive elements (animations, hover effects) are captured as static snapshots.
 </Callout>
 
-## Static HTML
+## Static Site Deployment
 
-Build a self-contained static site:
+Build the project as a standard Next.js application:
 
 ```bash
 npm run build
 ```
 
-The output in the `out/` directory can be deployed to any static hosting service (GitHub Pages, Vercel, Netlify, S3, etc.).
+The built output can be deployed to any hosting service that supports Next.js (Vercel, etc.).
 
-## Image Export
+## Live Sharing via Cloudflare Tunnel
 
-Export individual slides as PNG images:
+For real-time sharing, use Cloudflare Tunnel to expose your local dev server:
 
 ```bash
-npm run export:png
+npx cloudflared tunnel --url http://localhost:3000
 ```
 
-This creates one PNG file per slide in `exports/slides/`:
+Or ask your AI agent:
 
+```bash
+> Expose this deck via Cloudflare Tunnel and share the URL
 ```
-exports/slides/
-├── slide-01.png
-├── slide-02.png
-├── slide-03.png
-└── ...
-```
+
+This generates a public URL that anyone can access. Viewers see your slides in real time — any updates you make are reflected immediately.
 
 ### Use Cases
 
-- Embedding individual slides in documents or emails
-- Social media sharing
-- Thumbnail generation
+- Real-time deck review with remote team members
+- Live presentation to external audiences
+- Quick sharing without deployment

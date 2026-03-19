@@ -1,81 +1,97 @@
 ---
 title: Component Overview
-description: DexCode includes 100+ built-in slide components for charts, layouts, code blocks, and more.
+description: DexCode includes 30+ built-in MDX components for charts, layouts, code blocks, and more.
 ---
 
 ## Built-in Components
 
-DexCode slides are MDX files — Markdown with React components. You can use any built-in component directly in your slides without importing.
+DexCode slides are MDX files — Markdown with React components. All built-in components are available directly in your slides without importing.
 
 ## Available Components
 
-### Data Visualization
-
-- **BarChart** — Vertical and horizontal bar charts
-- **LineChart** — Line charts with multiple series
-- **PieChart** — Pie and donut charts
-- **AreaChart** — Stacked and filled area charts
-- **KpiCards** — Key performance indicator cards with trend arrows
-
 ### Layout
 
-- **Columns** — Multi-column layouts (2, 3, or custom widths)
-- **CardGrid** — Grid of styled cards
-- **ImageLeft / ImageRight** — Image + text split layouts
-- **CenteredHeading** — Full-bleed centered heading slide
-- **Dashboard** — Multi-widget dashboard layout
+- **Columns / Column** — Multi-column layouts with custom widths
+- **Center** — Center content vertically and horizontally
 
 ### Content
 
-- **CodeBlock** — Syntax-highlighted code with copy button
-- **Table** — Styled tables with header formatting
-- **Timeline** — Horizontal or vertical timelines
-- **Steps** — Numbered step sequences
-- **Checklist** — Interactive checklists
-- **Blockquote** — Styled quotations
+- **Card** — Styled content card
+- **Timeline / TimelineItem** — Vertical timeline visualization
+- **Steps / Step** — Numbered step sequences
+- **SummaryBanner** — Summary/highlight banner
 
-### Visual
+### Data Visualization
 
-- **Icons** — 1000+ Lucide icons available
-- **Shapes** — Decorative SVG shapes
-- **BigNumber** — Large stat/number display
-- **TeamProfiles** — Team member cards with avatars
-- **BeforeAfter** — Side-by-side comparison
+- **Chart** — Charts powered by Recharts (supports `type="bar"`, `"line"`, `"pie"`, `"area"`)
+- **KpiStrip** — Key performance indicator strip with metrics
+- **ShowcaseStatGrid** — Grid of statistics
+- **ShowcaseMetric** — Single metric display
 
-### Diagrams
+### Media & Decorative
 
-- **Flowchart** — Process flow diagrams
-- **Pyramid** — Hierarchical pyramids
-- **VennDiagram** — Overlapping circles
-- **SWOT** — SWOT analysis matrix
-- **CycleDigram** — Circular process diagrams
+- **Icon** — 1000+ Lucide icons available
+- **Shape** — Decorative SVG shapes
+- **ShowcaseShapeGrid / ShapeItem** — Grid of decorative shapes
+- **ShowcaseIconGrid** — Grid of icons with labels
+
+### Showcase Templates
+
+Pre-built slide templates for common presentation patterns:
+
+- **ShowcaseCover** — Title/cover slide
+- **ShowcaseSection** — Section divider
+- **ShowcaseEndSlide** — Thank you / closing slide
+- **ShowcaseSplit** — Split layout (text + visual)
+- **ShowcaseColumnText** — Multi-column text layout
+- **ShowcaseComparison** — Side-by-side comparison
+- **ShowcaseComparisonTable** — Comparison table
+- **ShowcaseFeatureGrid** — Feature grid cards
+- **ShowcaseTeamGrid** — Team member grid
+- **ShowcaseQuote** — Quotation slide
+- **ShowcasePricing** — Pricing table
+- **ShowcaseAgenda** — Agenda/schedule
+- **ShowcaseFAQ** — FAQ layout
+- **ShowcaseVideo** — Video embed
+- **ShowcaseDashboard** — Dashboard layout
+- **ShowcaseMatrix** — Matrix/grid diagram
+- **ShowcaseDiagram** — Generic diagram
+- **ShowcaseLayerStack** — Layer stack visualization
+- **FigureShowcase** — Image with caption
+- **ScreenshotCallouts** — Screenshot with annotation callouts
+- **LogoWall** — Logo grid
 
 ## Usage Example
 
 ```mdx
 ---
-layout: two-column
+type: content
 ---
 
 <Columns widths="60,40">
+<Column>
 
 # Q3 Revenue Growth
 
 Our revenue grew **45% quarter-over-quarter**, driven by
 enterprise adoption and the launch of our Pro tier.
 
-<BarChart
+</Column>
+<Column>
+
+<Chart
+  type="bar"
   data={[
-    { label: "Q1", value: 820 },
-    { label: "Q2", value: 1200 },
-    { label: "Q3", value: 1740 },
+    { name: "Q1", value: 820 },
+    { name: "Q2", value: 1200 },
+    { name: "Q3", value: 1740 },
   ]}
-  unit="K"
 />
 
+</Column>
 </Columns>
 ```
 
-<LinkCard href="/docs/components/charts" title="Charts" description="Learn how to use chart components in your slides." />
+<LinkCard href="/docs/components/charts" title="Charts" description="Learn how to use the Chart component in your slides." />
 <LinkCard href="/docs/components/code-blocks" title="Code Blocks" description="Syntax-highlighted code with theme support." />
 <LinkCard href="/docs/components/layouts" title="Layouts" description="Multi-column and grid layout options." />

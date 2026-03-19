@@ -1,47 +1,55 @@
 ---
 title: Layouts
-description: Use built-in layout components to structure your DexCode slides with columns, grids, and split views.
+description: Use built-in layout components to structure your DexCode slides with columns and centered content.
 ---
 
 ## Layout System
 
-DexCode slides support multiple layout options through frontmatter and components.
+DexCode slides support layout options through frontmatter slide types and layout components.
 
-## Frontmatter Layouts
+## Slide Types via Frontmatter
 
-Set the layout in your slide's frontmatter:
+Set the slide type in your frontmatter:
 
 ```mdx
 ---
-layout: two-column
+type: cover
 ---
 ```
 
-### Available Layouts
+### Available Slide Types
 
-| Layout | Description |
+| Type | Description |
 |---|---|
-| `default` | Standard single-column with padding |
+| `content` | Standard single-column slide (default) |
 | `cover` | Full-bleed cover slide with centered content |
-| `two-column` | Equal two-column split |
-| `three-column` | Three equal columns |
+| `section` | Section divider slide |
+| `comparison` | Side-by-side comparison layout |
+| `stats` | Statistics and metrics display |
+| `timeline` | Timeline visualization |
 | `image-left` | Image on left, text on right |
 | `image-right` | Text on left, image on right |
-| `centered` | Vertically and horizontally centered |
-| `dashboard` | Multi-widget grid layout |
-| `section` | Section divider slide |
+| `image-full` | Full-bleed image slide |
+| `quote` | Quotation slide |
+| `agenda` | Agenda/table of contents |
+| `ending` | Thank you / closing slide |
 
 ## Columns Component
 
-For custom column widths, use the `Columns` component:
+For custom column layouts, use the `Columns` and `Column` components:
 
 ```mdx
 <Columns widths="40,60">
+<Column>
 
 Left content takes 40% width.
 
+</Column>
+<Column>
+
 Right content takes 60% width.
 
+</Column>
 </Columns>
 ```
 
@@ -49,73 +57,84 @@ Right content takes 60% width.
 
 ```mdx
 <Columns widths="33,34,33">
+<Column>
 
 **Column 1**
 First item details
 
+</Column>
+<Column>
+
 **Column 2**
 Second item details
+
+</Column>
+<Column>
 
 **Column 3**
 Third item details
 
+</Column>
 </Columns>
 ```
 
-## CardGrid
+## Center Component
 
-Display items in a responsive grid:
+Center content vertically and horizontally within a slide:
 
 ```mdx
-<CardGrid cols={3}>
+<Center>
+
+# Big Announcement
+
+This text is centered on the slide.
+
+</Center>
+```
+
+## Card Component
+
+Display styled content cards:
+
+```mdx
+<Columns widths="33,34,33">
+<Column>
 
 <Card title="Feature A">
 Description of feature A with supporting details.
 </Card>
 
+</Column>
+<Column>
+
 <Card title="Feature B">
 Description of feature B with supporting details.
 </Card>
+
+</Column>
+<Column>
 
 <Card title="Feature C">
 Description of feature C with supporting details.
 </Card>
 
-</CardGrid>
+</Column>
+</Columns>
 ```
 
-## Split Views
+## Image + Text Layouts
 
-### Image + Text
+Use the `image-left` or `image-right` slide types for split layouts:
 
 ```mdx
 ---
-layout: image-left
-image: /images/screenshot.png
+type: image-left
 ---
 
 # Product Screenshot
 
 This is our latest dashboard interface showing
 real-time metrics and user activity.
-```
-
-### Before & After
-
-```mdx
-<BeforeAfter>
-
-<div>
-**Before**: Manual slide creation in PowerPoint.
-Average time: 4 hours per deck.
-</div>
-
-<div>
-**After**: AI-generated slides with DexCode.
-Average time: 15 minutes per deck.
-</div>
-
-</BeforeAfter>
 ```
 
 <Callout type="tip">

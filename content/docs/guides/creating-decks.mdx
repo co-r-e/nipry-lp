@@ -5,35 +5,48 @@ description: Learn how to create slide decks from scratch using AI agents and De
 
 ## Deck Structure
 
-Every DexCode deck is a directory containing MDX slide files and a configuration file:
+Every DexCode deck is a directory inside `decks/` containing MDX slide files and a configuration file:
 
 ```
-my-deck/
-├── deck.config.ts     # Theme, title, metadata
-├── slides/
-│   ├── slide-01.mdx   # Each file = one slide
-│   ├── slide-02.mdx
-│   └── slide-03.mdx
-└── public/
-    └── images/        # Static assets
+decks/my-deck/
+├── deck.config.ts     # Theme, title, overlays
+├── a-cover.mdx        # Each file = one slide
+├── about.mdx
+├── features.mdx
+└── assets/            # Static assets (images, etc.)
 ```
+
+Slides are ordered alphabetically by filename, or via an optional `slide-order.ts` file.
 
 ## The deck.config.ts File
 
-The deck configuration defines your deck's metadata and theme:
+The deck configuration defines your deck's title, theme, and optional overlays:
 
 ```typescript
-import { defineConfig } from "dexcode";
+import { defineConfig } from "../../src/lib/deck-config";
 
 export default defineConfig({
   title: "Q3 Roadmap Review",
-  author: "Engineering Team",
-  date: "2026-03-19",
   theme: {
-    primary: "#e17120",
-    background: "#111111",
-    text: "#e8e8e8",
+    colors: {
+      primary: "#e17120",
+      background: "#111111",
+      text: "#e8e8e8",
+    },
+    fonts: {
+      heading: "Inter, sans-serif",
+      body: "Noto Sans JP, sans-serif",
+    },
   },
+  logo: {
+    src: "/my-logo.svg",
+    position: "top-right",
+  },
+  copyright: {
+    text: "© 2026 My Company",
+    position: "bottom-left",
+  },
+  transition: "fade",
 });
 ```
 
@@ -43,7 +56,7 @@ Each slide is an MDX file that combines Markdown with React components:
 
 ```mdx
 ---
-layout: default
+type: content
 ---
 
 # Our Product Roadmap
@@ -54,11 +67,12 @@ layout: default
 - **Integrations**: Slack, GitHub, Linear
 - **AI Features**: Smart suggestions
 
-<BarChart
+<Chart
+  type="bar"
   data={[
-    { label: "Q1", value: 120 },
-    { label: "Q2", value: 180 },
-    { label: "Q3", value: 250 },
+    { name: "Q1", value: 120 },
+    { name: "Q2", value: 180 },
+    { name: "Q3", value: 250 },
   ]}
 />
 ```
@@ -70,7 +84,7 @@ The most efficient way to create decks is through AI agents:
 ### Single-Prompt Generation
 
 ```bash
-> Create a 12-slide investor pitch deck.
+> Create a 12-slide investor pitch deck in decks/investor-pitch.
   Cover: company name "Acme", tagline "Build faster".
   Include: problem, solution, market size, traction, team, financials, ask.
 ```
@@ -80,7 +94,7 @@ The most efficient way to create decks is through AI agents:
 Point the agent at your project for context-aware slides:
 
 ```bash
-> Create a sprint review deck with 8 slides.
+> Create a sprint review deck with 8 slides in decks/sprint-review.
   Summarize the work from ./my-project since last Monday.
   Focus on the API changes and the new dashboard feature.
 ```
@@ -89,16 +103,18 @@ Point the agent at your project for context-aware slides:
 The more context you give the agent, the better the output. Reference specific files, directories, or git history for accurate content.
 </Callout>
 
-## Slide Layouts
+## Slide Types
 
-DexCode includes 100+ built-in slide templates. Specify a layout in the frontmatter:
+DexCode includes 12 built-in slide types. Specify a type in the frontmatter:
 
 ```mdx
 ---
-layout: two-column
+type: cover
 ---
 ```
 
-Available layouts include `default`, `cover`, `two-column`, `three-column`, `image-left`, `image-right`, `centered`, `dashboard`, and many more.
+Available types: `content`, `cover`, `section`, `comparison`, `stats`, `timeline`, `image-left`, `image-right`, `image-full`, `quote`, `agenda`, `ending`.
+
+Additionally, 20+ Showcase components provide pre-built templates for common patterns like pricing tables, team grids, FAQ layouts, dashboards, and more.
 
 <LinkCard href="/docs/components/overview" title="Components" description="Explore all built-in components for your slides." />

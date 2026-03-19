@@ -14,10 +14,13 @@ Once DexCode is installed and the dev server is running, open your AI coding age
 $ claude
 > Create a 5-slide pitch deck for a developer tool called "FastAPI Dashboard".
   Include a cover slide, problem statement, solution overview, features, and CTA.
+  Put it in a new deck directory at decks/fastapi-dashboard.
 ```
 </Terminal>
 
-Claude Code will generate MDX files in the `slides/` directory. As each file is saved, the browser preview updates instantly.
+Claude Code will generate MDX files in the deck's directory along with a `deck.config.ts`. As each file is saved, the browser preview updates instantly.
+
+Navigate to `http://localhost:3000/fastapi-dashboard` to view your deck.
 
 ### Using Other Agents
 
@@ -27,13 +30,13 @@ DexCode works with any agent that can edit files:
 
 <div>
 ```bash
-$ codex "Create a 5-slide pitch deck in the DexCode project"
+$ codex "Create a 5-slide pitch deck in the DexCode project at decks/my-deck"
 ```
 </div>
 
 <div>
 ```bash
-$ gemini "Create a 5-slide pitch deck in the DexCode project"
+$ gemini "Create a 5-slide pitch deck in the DexCode project at decks/my-deck"
 ```
 </div>
 
@@ -71,11 +74,11 @@ The agent will spawn subagents to edit each slide concurrently.
 <Steps>
 
 <div>
-**Presenter Mode** — Press `P` in the browser to open presenter mode with a separate fullscreen window.
+**Fullscreen** — Press `f` in the browser to toggle fullscreen mode for presenting.
 </div>
 
 <div>
-**Export to PDF** — Run `npm run export:pdf` to generate a high-quality PDF via Playwright.
+**Export** — Use the export buttons in the toolbar to generate PDF or PPTX files.
 </div>
 
 <div>
