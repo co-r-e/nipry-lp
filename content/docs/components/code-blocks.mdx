@@ -34,11 +34,7 @@ DexCode supports a wide range of programming languages, including:
 
 ## Multi-Language Code
 
-Show code in multiple languages side by side using the Columns component:
-
-```mdx
-<Columns widths="50,50">
-<Column>
+Show code in multiple languages side by side using the `Columns` component. Place each language in a separate `Column` with its own code block, letting viewers compare implementations at a glance.
 
 ### TypeScript
 
@@ -46,9 +42,6 @@ Show code in multiple languages side by side using the Columns component:
 const result = await fetch("/api/data");
 const data = await result.json();
 ```
-
-</Column>
-<Column>
 
 ### Python
 
@@ -58,8 +51,12 @@ result = requests.get("/api/data")
 data = result.json()
 ```
 
-</Column>
-</Columns>
+### Go
+
+```go
+resp, err := http.Get("/api/data")
+defer resp.Body.Close()
+data, _ := io.ReadAll(resp.Body)
 ```
 
 ## Terminal Blocks
