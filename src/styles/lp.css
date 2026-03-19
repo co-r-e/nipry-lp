@@ -966,6 +966,94 @@
     color: var(--text-light);
 }
 
+/* Agent Skills */
+.lp-root .agent-skills-section {
+    padding: 100px 0;
+    background: #0d0d0d;
+}
+
+.lp-root .skills-table-wrapper {
+    overflow-x: auto;
+    margin-top: 48px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.lp-root .skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.lp-root .skills-table thead {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.lp-root .skills-table th {
+    padding: 14px 20px;
+    text-align: left;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lp-root .skills-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    vertical-align: middle;
+}
+
+.lp-root .skills-table tbody tr {
+    transition: background 0.2s;
+}
+
+.lp-root .skills-table tbody tr:hover {
+    background: rgba(225, 113, 32, 0.06);
+}
+
+.lp-root .skills-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.lp-root .skill-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #fff;
+}
+
+.lp-root .skill-icon {
+    font-size: 1.2rem;
+    width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.lp-root .skill-desc-cell {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+}
+
+.lp-root .skill-trigger-cell code {
+    background: rgba(225, 113, 32, 0.12);
+    color: #ffb56a;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-family: var(--font-mono, "SF Mono", monospace);
+    white-space: nowrap;
+}
+
+.lp-root .skills-trigger-col {
+    width: 180px;
+}
+
 /* How It Works */
 .lp-root .how-it-works {
     padding: 100px 0;
@@ -1363,6 +1451,24 @@
 
     .lp-root .how-it-works {
         padding: 64px 0;
+    }
+
+    .lp-root .agent-skills-section {
+        padding: 64px 0;
+    }
+
+    .lp-root .skills-trigger-col {
+        display: none;
+    }
+
+    .lp-root .skill-trigger-cell {
+        display: none;
+    }
+
+    .lp-root .skills-table th,
+    .lp-root .skills-table td {
+        padding: 10px 14px;
+        font-size: 0.85rem;
     }
 
     .lp-root .section-title {

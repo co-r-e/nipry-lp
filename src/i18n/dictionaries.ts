@@ -56,6 +56,14 @@ export interface Dictionary {
     subtitle: string;
     steps: { title: string; description: string; code: string }[];
   };
+  agentSkills: {
+    title: string;
+    subtitle: string;
+    colSkill: string;
+    colDescription: string;
+    colTrigger: string;
+    skills: { name: string; iconKey: string; description: string; trigger: string }[];
+  };
   cta: {
     label: string;
     title: string;
@@ -185,6 +193,29 @@ const en: Dictionary = {
       },
     ],
   },
+  agentSkills: {
+    title: "14 Built-in Agent Skills",
+    subtitle: "Specialized Claude Code skills that extend DexCode with AI-powered workflows — from deck design to video export.",
+    colSkill: "Skill",
+    colDescription: "Description",
+    colTrigger: "Trigger",
+    skills: [
+      { name: "Deck Designer", iconKey: "design", description: "Interactive Q&A to plan deck structure, audience, and theme before building.", trigger: '"design a deck"' },
+      { name: "Deck Scaffold", iconKey: "scaffold", description: "Generate deck.config.ts and numbered MDX files from a brief.", trigger: '"create a new deck"' },
+      { name: "Image Generation", iconKey: "image", description: "Generate AI images via Gemini API with auto aspect ratio detection.", trigger: '"generate an image"' },
+      { name: "Image Editor", iconKey: "imageEdit", description: "Edit existing images — remove objects, change colors, add elements.", trigger: '"edit this image"' },
+      { name: "SVG Diagram", iconKey: "diagram", description: "Create flowcharts, architecture maps, and process diagrams as theme-aware SVGs.", trigger: '"draw a diagram"' },
+      { name: "Graphic Recording", iconKey: "graphicRecording", description: "Generate graphic-recording-style illustrations from slide content.", trigger: '"グラレコ"' },
+      { name: "Remotion Video", iconKey: "video", description: "Convert a slide deck into an animated video with spring animations.", trigger: '"make a video"' },
+      { name: "Deck Localizer", iconKey: "localize", description: "Translate slides between Japanese and English while preserving MDX structure.", trigger: '"translate to English"' },
+      { name: "Overflow Fixer", iconKey: "overflow", description: "Auto-fix overflowing slide content with layout, media, and spacing adjustments.", trigger: '"fix overflow"' },
+      { name: "Preflight Auditor", iconKey: "preflight", description: "Lint slides for font sizes, hard-coded colors, missing notes, and safe-zone violations.", trigger: '"preflight check"' },
+      { name: "Speaker Notes", iconKey: "notes", description: "Standardize speaker notes with Purpose, Talking Points, and Estimated Time.", trigger: '"polish notes"' },
+      { name: "Fact Checker", iconKey: "facts", description: "Scan slides for numeric claims and flag lines missing verifiable citations.", trigger: '"citation check"' },
+      { name: "Theme Normalizer", iconKey: "theme", description: "Replace hard-coded HEX colors with CSS variable references from your theme.", trigger: '"normalize theme"' },
+      { name: "Remotion Reference", iconKey: "remotion", description: "Best practices and API reference for Remotion video animations.", trigger: '"Remotion best practice"' },
+    ],
+  },
   cta: {
     label: "Get Started",
     title: "Ready to iterate slides in parallel\nand present with confidence?",
@@ -312,6 +343,29 @@ const ja: Dictionary = {
         description: "AIで最終調整を行い、Cloudflare Tunnelでライブ共有、準備ができたらプレゼン。",
         code: "> Make slide 05 headline sharper and align chart axis labels\n> Expose this deck with Cloudflare Tunnel and share the URL\nnpm run dev",
       },
+    ],
+  },
+  agentSkills: {
+    title: "14の組み込みエージェントスキル",
+    subtitle: "デッキ設計から動画エクスポートまで、AI駆動のワークフローを拡張する専用Claude Codeスキル。",
+    colSkill: "スキル",
+    colDescription: "説明",
+    colTrigger: "トリガー",
+    skills: [
+      { name: "Deck Designer", iconKey: "design", description: "Q&A形式でデッキの構成・対象者・テーマを設計。", trigger: '"デッキを設計"' },
+      { name: "Deck Scaffold", iconKey: "scaffold", description: "ブリーフからdeck.config.tsとMDXファイルを一括生成。", trigger: '"デッキを作って"' },
+      { name: "Image Generation", iconKey: "image", description: "Gemini APIでAI画像を生成。アスペクト比を自動検出。", trigger: '"画像を生成"' },
+      { name: "Image Editor", iconKey: "imageEdit", description: "既存画像を編集 — 背景除去、色変更、要素追加。", trigger: '"画像を編集"' },
+      { name: "SVG Diagram", iconKey: "diagram", description: "フローチャート、アーキテクチャ図、プロセス図をテーマ対応SVGで作成。", trigger: '"図を描いて"' },
+      { name: "Graphic Recording", iconKey: "graphicRecording", description: "スライド内容からグラレコ風イラストを生成。", trigger: '"グラレコ"' },
+      { name: "Remotion Video", iconKey: "video", description: "スライドデッキをスプリングアニメーション付き動画に変換。", trigger: '"動画にして"' },
+      { name: "Deck Localizer", iconKey: "localize", description: "MDX構造を保持したまま日英翻訳。", trigger: '"英語に翻訳"' },
+      { name: "Overflow Fixer", iconKey: "overflow", description: "はみ出したスライドをレイアウト・余白・メディア調整で自動修正。", trigger: '"はみ出し修正"' },
+      { name: "Preflight Auditor", iconKey: "preflight", description: "フォントサイズ、ハードコード色、ノート不足、セーフゾーン違反をチェック。", trigger: '"プリフライト"' },
+      { name: "Speaker Notes", iconKey: "notes", description: "スピーカーノートを目的・要点・想定時間の形式に統一。", trigger: '"ノートを整理"' },
+      { name: "Fact Checker", iconKey: "facts", description: "数値的主張をスキャンし、出典不足の行をフラグ。", trigger: '"ファクトチェック"' },
+      { name: "Theme Normalizer", iconKey: "theme", description: "ハードコードHEXカラーをテーマのCSS変数に置換。", trigger: '"テーマ正規化"' },
+      { name: "Remotion Reference", iconKey: "remotion", description: "Remotion動画アニメーションのベストプラクティスとAPIリファレンス。", trigger: '"Remotion参照"' },
     ],
   },
   cta: {

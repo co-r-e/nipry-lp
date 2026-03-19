@@ -1,0 +1,171 @@
+---
+title: Agent Skills
+description: 14 built-in Claude Code skills that extend DexCode with AI-powered workflows.
+---
+
+## Overview
+
+DexCode ships with 14 specialized Claude Code skills in the `.claude/skills/` directory. Each skill is triggered by natural language prompts and automates a specific workflow — from deck planning to video export.
+
+## Creation & Design
+
+### Deck Designer
+
+Interactive Q&A consultant that guides you through planning a deck's structure, audience, and theme before building.
+
+```bash
+> デッキを設計して / design a deck / help me plan a presentation
+```
+
+Outputs a structured brief to `tasks/deck-brief-<name>.md` that can be passed to the Deck Scaffold skill.
+
+### Deck Scaffold
+
+Generates `deck.config.ts` and a full set of numbered MDX slide files from a brief or prompt.
+
+```bash
+> デッキを作って / create a new deck / scaffold deck from this brief
+```
+
+### Image Generation
+
+Generates AI images via Gemini API and inserts them into MDX slides. Automatically detects the optimal aspect ratio from 10 presets (9:16 to 21:9).
+
+```bash
+> 画像を生成 / generate an image for this slide / add a photo to slide 3
+```
+
+<Callout type="info">
+Requires the `GEMINI_API_KEY` environment variable to be set.
+</Callout>
+
+### Image Editor
+
+Edits existing images — remove objects, change colors, add elements — via Gemini API and updates the MDX slide in place.
+
+```bash
+> 画像を編集 / edit this image / remove the background
+```
+
+### SVG Diagram
+
+Creates professional SVG diagrams (flowcharts, architecture maps, process flows, comparison, hierarchy, cycle, concept grids) that match your deck's theme colors.
+
+```bash
+> 図を描いて / draw a flowchart / create an architecture diagram
+```
+
+Supports 7 diagram templates with orthogonal arrow routing and 24px grid alignment.
+
+### Graphic Recording
+
+Generates graphic-recording-style illustrations from slide content using Gemini image generation.
+
+```bash
+> グラレコ / graphic recording / visual note for this slide
+```
+
+## Video & Localization
+
+### Remotion Video
+
+Converts a DexCode slide deck into an animated video using Remotion with spring animations, Google Fonts mapping, and asset copying.
+
+```bash
+> 動画にして / make a video from this deck / export as video
+```
+
+Outputs a standalone Remotion project at 1920x1080 30fps with configurable per-slide hold durations.
+
+### Deck Localizer
+
+Translates slides between Japanese and English while preserving MDX/JSX structure, code fences, URLs, and asset paths. Uses Gemini API for batch translation.
+
+```bash
+> 英語に翻訳 / translate to English / localize this deck to Japanese
+```
+
+Supports dry-run preview and glob-based file filtering.
+
+## Quality Assurance
+
+### Overflow Fixer
+
+Auto-fixes overflowing slide content using a prioritized strategy: layout changes → media resizing → spacing tuning → slide splitting.
+
+```bash
+> はみ出し修正 / fix overflow / content does not fit
+```
+
+Uses screenshot-based before/after verification to confirm fixes.
+
+### Preflight Auditor
+
+Runs automated audits on MDX slides to detect rule violations before review or export.
+
+```bash
+> プリフライト / preflight check / lint my slides
+```
+
+Checks for: minimum font sizes, accent border rules, Tailwind usage in slides, hard-coded colors, and missing speaker notes. CI-compatible exit codes.
+
+### Speaker Notes Polisher
+
+Standardizes speaker notes across all slides with Purpose, Talking Points, and Estimated Time sections.
+
+```bash
+> ノートを整理 / polish notes / add speaker notes to all slides
+```
+
+Supports fill mode (add missing sections) and rewrite mode (unify tone/structure).
+
+### Fact & Citation Validator
+
+Scans slides for numeric and factual claims, then flags lines that lack verifiable citations.
+
+```bash
+> ファクトチェック / citation check / validate references
+```
+
+Supports Markdown and JSON output formats with CI-friendly `--fail-on` flag.
+
+### Theme Normalizer
+
+Replaces hard-coded HEX colors in MDX slides with CSS variable references (`var(--slide-*)`) based on your deck's `theme.colors`.
+
+```bash
+> テーマ正規化 / normalize theme / replace hex with variables
+```
+
+Supports dry-run preview with per-file replacement counts.
+
+## Reference
+
+### Remotion Best Practices
+
+Provides best practices and API reference for building Remotion videos — animations, transitions, fonts, assets, audio, captions, charts, 3D, and rendering configuration.
+
+```bash
+> Remotion best practice / how do I animate in Remotion
+```
+
+Includes 30+ progressive-disclosure rule files covering interpolation, spring timing, TransitionSeries, Google Fonts, audio visualization, and subtitle synchronization.
+
+## Summary
+
+| Skill | Category | Trigger Example |
+|---|---|---|
+| Deck Designer | Creation | `"design a deck"` |
+| Deck Scaffold | Creation | `"create a new deck"` |
+| Image Generation | Creation | `"generate an image"` |
+| Image Editor | Creation | `"edit this image"` |
+| SVG Diagram | Creation | `"draw a diagram"` |
+| Graphic Recording | Creation | `"グラレコ"` |
+| Remotion Video | Video | `"make a video"` |
+| Deck Localizer | Localization | `"translate to English"` |
+| Overflow Fixer | QA | `"fix overflow"` |
+| Preflight Auditor | QA | `"preflight check"` |
+| Speaker Notes | QA | `"polish notes"` |
+| Fact Checker | QA | `"citation check"` |
+| Theme Normalizer | QA | `"normalize theme"` |
+| Remotion Reference | Reference | `"Remotion best practice"` |
