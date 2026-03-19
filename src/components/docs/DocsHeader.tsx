@@ -2,8 +2,8 @@
 
 import { useState, useEffect, type ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTheme } from "next-themes";
-import { DocsLogo } from "./DocsLogo";
 
 interface Props {
   onSearchOpen: () => void;
@@ -38,7 +38,7 @@ export function DocsHeader({ onSearchOpen }: Props): ReactNode {
   return (
     <header className="sticky top-0 z-40 flex h-14 items-center justify-between border-b border-[var(--line)] bg-[var(--background)]/80 px-4 backdrop-blur-lg lg:px-6">
       <Link href="/docs" className="flex items-center" aria-label="DexCode Docs home">
-        <DocsLogo className="h-7 w-auto" style={{ color: "var(--docs-logo-color)" }} />
+        <Image src="/assets/dexcode-logo.svg" alt="DexCode" width={140} height={28} className="h-7 w-auto" />
       </Link>
 
       <div className="flex items-center gap-2">

@@ -10,6 +10,7 @@ import {
 import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import type { SearchEntry } from "@/lib/docs/types";
+import { assetUrl } from "@/lib/asset-path";
 
 const TRANSITION_MS = 200;
 
@@ -113,7 +114,7 @@ export function SearchModal({ open, onClose }: Props): ReactNode {
       try {
         const [orama, indexResponse] = await Promise.all([
           import("@orama/orama"),
-          fetch("/docs/search-index.json"),
+          fetch(assetUrl("/docs/search-index.json")),
         ]);
 
         if (!indexResponse.ok) {
