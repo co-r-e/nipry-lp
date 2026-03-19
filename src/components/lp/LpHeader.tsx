@@ -26,6 +26,11 @@ export function LpHeader({ dict, locale }: LpHeaderProps): ReactNode {
                 {dict.header.howItWorks}
               </a>
             </li>
+            <li>
+              <a href="/dexcode-lp/docs/getting-started/introduction" className="nav-link">
+                Docs
+              </a>
+            </li>
           </ul>
         </nav>
         <a href={locale === "en" ? "/" : "/ja"} className="logo">

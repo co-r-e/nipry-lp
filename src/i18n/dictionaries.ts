@@ -61,10 +61,12 @@ export interface Dictionary {
     title: string;
     subtitle: string;
     button: string;
+    docsButton: string;
   };
   footer: {
     copyright: string;
     github: string;
+    docs: string;
     company: string;
   };
 }
@@ -188,10 +190,12 @@ const en: Dictionary = {
     title: "Ready to iterate slides in parallel\nand present with confidence?",
     subtitle: "Open source, MIT licensed, and free to use.",
     button: "Get Started Free on GitHub",
+    docsButton: "Read the Docs",
   },
   footer: {
     copyright: "© 2026 CORe Inc. All rights reserved.",
     github: "GitHub",
+    docs: "Docs",
     company: "Company",
   },
 };
@@ -315,10 +319,12 @@ const ja: Dictionary = {
     title: "スライドを並列で改善し、\n自信を持ってプレゼンする準備はできましたか？",
     subtitle: "オープンソース、MITライセンス、無料で利用可能。",
     button: "無料ではじめる — GitHub",
+    docsButton: "ドキュメントを読む",
   },
   footer: {
     copyright: "© 2026 CORe Inc. All rights reserved.",
     github: "GitHub",
+    docs: "Docs",
     company: "Company",
   },
 };

@@ -23,12 +23,20 @@ export function CtaSection({ dict }: CtaSectionProps): ReactNode {
           dangerouslySetInnerHTML={{ __html: dict.cta.title.replace(/\n/g, "<br>") }}
         />
         <p className="cta-subtitle">{dict.cta.subtitle}</p>
-        <a
-          href="https://github.com/co-r-e/dexcode"
-          className="btn btn-primary btn-large"
-        >
-          {dict.cta.button}
-        </a>
+        <div className="cta-buttons">
+          <a
+            href="https://github.com/co-r-e/dexcode"
+            className="btn btn-primary btn-large"
+          >
+            {dict.cta.button}
+          </a>
+          <a
+            href="/dexcode-lp/docs/getting-started/introduction"
+            className="btn btn-secondary btn-large"
+          >
+            {dict.cta.docsButton}
+          </a>
+        </div>
       </div>
     </section>
   );

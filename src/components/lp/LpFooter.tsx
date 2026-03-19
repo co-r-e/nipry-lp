@@ -24,6 +24,9 @@ export function LpFooter({ dict }: LpFooterProps): ReactNode {
           <a href="https://github.com/co-r-e/dexcode" className="footer-link">
             {dict.footer.github}
           </a>
+          <a href="/dexcode-lp/docs/getting-started/introduction" className="footer-link">
+            {dict.footer.docs}
+          </a>
           <a
             href="https://co-r-e.com"
             target="_blank"
