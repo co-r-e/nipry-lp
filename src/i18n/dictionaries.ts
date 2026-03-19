@@ -242,7 +242,7 @@ const ja: Dictionary = {
   header: {
     features: "機能",
     howItWorks: "使い方",
-    langLabel: "EN",
+    langLabel: "JA",
     langSwitchAriaLabel: "Switch to English",
     cta: "無料ではじめる",
   },
