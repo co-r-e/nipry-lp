@@ -1,0 +1,54 @@
+# DexCode
+
+> DexCode is an open-source, AI-first slide authoring and refinement tool for developers. Create, revise, and share presentation decks from the terminal using AI coding agents like Claude Code, Codex CLI, Gemini CLI, or Cursor.
+
+## Key Facts
+
+- License: MIT (free and open source)
+- Author: CORe Inc.
+- Repository: https://github.com/co-r-e/dexcode
+- Website: https://co-r-e.github.io/dexcode-lp/
+- Documentation: https://co-r-e.github.io/dexcode-lp/docs/getting-started/introduction
+
+## What DexCode Does
+
+DexCode lets developers create slide presentations without leaving the terminal. Slides are written as MDX files (Markdown + React components) and rendered in real-time with hot module replacement. AI agents generate and edit slides, and multiple slides can be revised in parallel by spawning subagents.
+
+## Core Features
+
+- AI-first workflow: prompt your coding agent to generate entire decks
+- Per-slide parallel editing: spawn one agent per slide for concurrent revisions
+- 30+ built-in MDX components: charts, layouts, timelines, cards, icons, shapes
+- 12 slide types: cover, section, content, comparison, stats, timeline, image-left, image-right, image-full, quote, agenda, ending
+- 20+ showcase templates for common presentation patterns
+- Live reload via Next.js HMR
+- PDF and PPTX export from the browser
+- Cloudflare Tunnel sharing for real-time collaboration
+- 14 built-in Claude Code agent skills (deck design, image generation, SVG diagrams, video export, localization, QA audits)
+
+## Tech Stack
+
+- Next.js 16 (App Router)
+- React 19
+- MDX for slide content
+- Recharts for data visualization
+- Tailwind CSS for styling
+- jsPDF + pptxgenjs for export
+- Cloudflare Tunnel for sharing
+- Gemini API for image generation
+
+## Documentation
+
+- [Getting Started](https://co-r-e.github.io/dexcode-lp/docs/getting-started/introduction)
+- [Installation](https://co-r-e.github.io/dexcode-lp/docs/getting-started/installation)
+- [Quick Start](https://co-r-e.github.io/dexcode-lp/docs/getting-started/quick-start)
+- [Creating Decks](https://co-r-e.github.io/dexcode-lp/docs/guides/creating-decks)
+- [Parallel Editing](https://co-r-e.github.io/dexcode-lp/docs/guides/parallel-editing)
+- [Agent Skills](https://co-r-e.github.io/dexcode-lp/docs/guides/agent-skills)
+- [Sharing & Presenting](https://co-r-e.github.io/dexcode-lp/docs/guides/sharing)
+- [Theme Customization](https://co-r-e.github.io/dexcode-lp/docs/guides/theme-customization)
+- [Components](https://co-r-e.github.io/dexcode-lp/docs/components/overview)
+- [Configuration](https://co-r-e.github.io/dexcode-lp/docs/reference/configuration)
+- [CLI Commands](https://co-r-e.github.io/dexcode-lp/docs/reference/cli-commands)
+- [Export Options](https://co-r-e.github.io/dexcode-lp/docs/reference/export)
+- [Keyboard Shortcuts](https://co-r-e.github.io/dexcode-lp/docs/reference/keyboard-shortcuts)

@@ -54,19 +54,42 @@ export default function EnglishLpPage(): ReactNode {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "DexCode",
-            description: dict.meta.description,
-            url: `${SITE_URL}/`,
-            applicationCategory: "DeveloperApplication",
-            operatingSystem: "Cross-platform",
-            offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-            license: "https://opensource.org/licenses/MIT",
-            codeRepository: "https://github.com/co-r-e/dexcode",
-            author: { "@type": "Organization", name: "CORe Inc." },
-          }),
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "DexCode",
+              description: dict.meta.description,
+              url: `${SITE_URL}/`,
+              applicationCategory: "DeveloperApplication",
+              operatingSystem: "macOS, Linux, Windows (WSL)",
+              offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+              license: "https://opensource.org/licenses/MIT",
+              codeRepository: "https://github.com/co-r-e/dexcode",
+              installUrl: "https://github.com/co-r-e/dexcode",
+              downloadUrl: "https://github.com/co-r-e/dexcode",
+              softwareVersion: "0.1.3",
+              datePublished: "2025-01-01",
+              inLanguage: ["en", "ja"],
+              author: {
+                "@type": "Organization",
+                name: "CORe Inc.",
+                url: "https://co-r-e.com",
+              },
+              screenshot: `${SITE_URL}/assets/og-image.png`,
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "DexCode",
+              url: `${SITE_URL}/`,
+              inLanguage: ["en", "ja"],
+              potentialAction: {
+                "@type": "SearchAction",
+                target: `${SITE_URL}/docs/getting-started/introduction`,
+              },
+            },
+          ]),
         }}
       />
       <LpPage locale="en" dict={dict} />

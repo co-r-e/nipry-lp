@@ -30,6 +30,16 @@ export const metadata: Metadata = {
   icons: {
     icon: "/assets/favicon.svg",
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 interface RootLayoutProps {
