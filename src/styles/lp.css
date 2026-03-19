@@ -976,7 +976,7 @@
     overflow-x: auto;
     margin-top: 48px;
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-color);
     background: rgba(255, 255, 255, 0.02);
 }
 
@@ -998,7 +998,7 @@
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .lp-root .skills-table td {

@@ -6,22 +6,10 @@ interface AgentSkillsSectionProps {
   dict: Dictionary;
 }
 
-const SKILL_ICONS: Record<string, string> = {
-  design: "🎨",
-  scaffold: "🏗️",
-  image: "🖼️",
-  imageEdit: "✏️",
-  diagram: "📐",
-  graphicRecording: "🎙️",
-  video: "🎬",
-  localize: "🌐",
-  overflow: "📏",
-  preflight: "✅",
-  notes: "🗒️",
-  facts: "🔍",
-  theme: "🎯",
-  remotion: "📚",
-};
+const SKILL_ICONS = [
+  "🎨", "🏗️", "🖼️", "✏️", "📐", "🎙️", "🎬",
+  "🌐", "📏", "✅", "🗒️", "🔍", "🎯", "📚",
+];
 
 export function AgentSkillsSection({ dict }: AgentSkillsSectionProps): ReactNode {
   return (
@@ -45,7 +33,7 @@ export function AgentSkillsSection({ dict }: AgentSkillsSectionProps): ReactNode
                 {dict.agentSkills.skills.map((skill, i) => (
                   <tr key={i}>
                     <td className="skill-name-cell">
-                      <span className="skill-icon">{SKILL_ICONS[skill.iconKey] ?? "⚡"}</span>
+                      <span className="skill-icon">{SKILL_ICONS[i]}</span>
                       <span className="skill-name">{skill.name}</span>
                     </td>
                     <td className="skill-desc-cell">{skill.description}</td>
