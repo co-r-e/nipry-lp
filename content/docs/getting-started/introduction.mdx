@@ -7,14 +7,25 @@ description: DexCode is an AI-first slide authoring and refinement tool for deve
 
 DexCode is an open-source slide authoring tool designed for developers. Instead of switching to PowerPoint or Google Slides, you create and refine presentations directly from your terminal using AI coding agents like **Claude Code**, **Codex CLI**, **Gemini CLI**, or **Cursor**.
 
+<Image
+  src="/products/products_dexcode.png"
+  alt="DexCode introduction graphic showing the terminal-first slide workflow"
+  width={1920}
+  height={1080}
+/>
+
 Slides are written as **MDX files** — Markdown with React components — and rendered in real-time with hot module replacement. Every change you make (or your AI agent makes) is reflected instantly in the browser.
 
 ## Key Concepts
 
-- **AI-First**: Your coding agent generates and edits slide files. You prompt, it builds.
-- **Per-Slide Parallel Editing**: After the initial draft, assign one agent per slide for simultaneous refinements.
-- **Live Preview**: Hot reload keeps your browser preview in sync as files change.
-- **Shareable**: Use Cloudflare Tunnel to share a live URL with your team, or export to PDF/PPTX.
+- **Zero Context Switching**: The AI agent you already use for coding — Claude Code, Codex, Gemini CLI, Cursor — builds your slides too. Same terminal, same flow.
+- **Per-Slide Parallel Editing**: After the initial draft, run one agent per slide and push multiple revisions at once instead of serial rework.
+- **AI Micro-Tuning**: Delegate spacing, wording, chart labels, and visual polish to AI for high-quality finishing touches with precision prompts.
+- **Live Preview**: Hot Module Replacement (HMR) keeps your browser preview in sync as files change — every save is reflected instantly.
+- **100+ Built-in Templates**: Charts, code blocks, layouts, dashboards, and more — all production-ready out of the box.
+- **Two Image Generation Skills**: Generate photorealistic images via Gemini API and professional SVG diagrams directly from the CLI — both auto-styled to your deck's theme.
+- **Shareable**: Use Cloudflare Tunnel to share a live URL with your team, export to PDF/PPTX, or present with built-in presenter mode.
+- **14 Agent Skills**: Specialized Claude Code skills for deck design, scaffolding, image generation, video export, localization, quality assurance, and more.
 
 ## Who is DexCode For?
 
@@ -26,10 +37,9 @@ DexCode is built for:
 
 ## How It Works
 
-1. Clone the DexCode repo and run `npm install && npm run dev`
-2. Open your AI agent (e.g., `claude`) and prompt it to create slides
-3. The agent generates MDX files; slides appear in the browser instantly
-4. Refine slides with follow-up prompts — in parallel if you want
-5. Share via Cloudflare Tunnel, export to PDF, or present directly
+1. **Prompt Between Commits** — Tell your AI agent to create slides while coding. Point it at your project path and it reads context automatically.
+2. **AI Generates Your Deck** — The agent creates MDX files and your slides appear in the browser in real time with hot reload.
+3. **Revise from the Terminal** — Refine your deck with natural language prompts, using the same workflow as code changes. Edit multiple slides in parallel.
+4. **Present & Share Instantly** — Jump into presenter mode, export to PDF/PPTX, or share a live URL via Cloudflare Tunnel.
 
 <LinkCard href="/docs/getting-started/installation" title="Installation" description="Set up DexCode on your machine in under a minute." />

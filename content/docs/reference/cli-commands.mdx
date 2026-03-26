@@ -47,11 +47,11 @@ npm run lint
 
 PDF and PPTX export are available through the browser UI. When viewing a deck, use the export buttons in the toolbar to generate exports.
 
-- **PDF** — Renders each slide as a JPEG image and combines them into a PDF using jsPDF
-- **PPTX** — Renders each slide as a JPEG image and inserts them into a PowerPoint file using pptxgenjs
+- **PDF** — Renders each slide at full resolution via Playwright and combines them into a high-quality PDF
+- **PPTX** — Renders each slide as a high-resolution image and inserts them into a PowerPoint file using pptxgenjs
 
 <Callout type="info">
-Export is browser-based — no additional CLI commands are needed. The export functions use html-to-image to capture each slide at full resolution.
+PDF export uses Playwright for accurate rendering. PPTX export captures each slide as an image-based snapshot.
 </Callout>
 
 ## Sharing via Cloudflare Tunnel

@@ -9,22 +9,22 @@ DexCode supports multiple export formats for different use cases. Export is avai
 
 ## PDF Export
 
-Generate a PDF of your deck directly from the browser toolbar. Each slide is rendered as a high-resolution JPEG image and combined into a PDF using jsPDF.
+Export your deck to a high-quality PDF via Playwright. Each slide is rendered at full resolution for accurate, high-fidelity output.
 
 ### How It Works
 
-1. Each slide is captured at full resolution using html-to-image
-2. The DOM waits for images, fonts, and animations to stabilize before capture
-3. Slides are rendered as JPEG images and inserted into a PDF
-4. The output is downloaded via the browser
+1. Playwright launches a headless browser to render each slide
+2. Each slide is captured at full resolution after images, fonts, and animations stabilize
+3. Slides are combined into a single PDF document
+4. The output is downloaded automatically
 
 <Callout type="info">
-PDF export runs entirely in the browser — no server-side rendering or Playwright installation is required.
+PDF export uses Playwright for precise rendering of all slide components including charts, SVG diagrams, and custom layouts.
 </Callout>
 
 ## PPTX Export
 
-Export to PowerPoint format from the browser toolbar. Each slide is rendered as a high-resolution image and inserted into a PPTX file using pptxgenjs.
+Export to PowerPoint format. Each slide is rendered as a high-resolution image and inserted into a PPTX file using pptxgenjs.
 
 <Callout type="info">
 PPTX export creates image-based slides. Interactive elements (animations, hover effects) are captured as static snapshots.
