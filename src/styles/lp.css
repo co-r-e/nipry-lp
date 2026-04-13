@@ -85,6 +85,113 @@
     transform: translateY(-2px);
 }
 
+.lp-root .btn-disabled {
+    position: relative;
+    background: #3a3a3a;
+    color: rgba(255, 255, 255, 0.55);
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: auto;
+    filter: grayscale(0.4);
+    user-select: none;
+}
+
+.lp-root .btn-disabled:hover {
+    transform: none;
+    background: #3a3a3a;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.lp-root .btn-disabled[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background: #1f1f1f;
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 500;
+    line-height: 1.4;
+    padding: 8px 12px;
+    border-radius: 8px;
+    white-space: nowrap;
+    max-width: min(90vw, 320px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    z-index: 1500;
+}
+
+.lp-root .btn-disabled[data-tooltip]::before {
+    content: "";
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #1f1f1f;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+    z-index: 1500;
+}
+
+.lp-root .btn-disabled[data-tooltip]:hover::after,
+.lp-root .btn-disabled[data-tooltip]:focus-visible::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.lp-root .btn-disabled[data-tooltip]:hover::before,
+.lp-root .btn-disabled[data-tooltip]:focus-visible::before {
+    opacity: 1;
+}
+
+/* Notice banner */
+.lp-root .notice-banner {
+    background: #d12626;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.lp-root .notice-banner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.lp-root .notice-banner-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.lp-root .notice-banner-text {
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .lp-root .notice-banner-inner {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+
+    .lp-root .btn-disabled[data-tooltip]::after {
+        white-space: normal;
+        max-width: min(90vw, 280px);
+        text-align: center;
+    }
+}
+
 .lp-root .btn-secondary {
     background-color: transparent;
     color: var(--accent-color);

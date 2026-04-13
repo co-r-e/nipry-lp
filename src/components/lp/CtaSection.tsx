@@ -24,12 +24,16 @@ export function CtaSection({ dict }: CtaSectionProps): ReactNode {
         />
         <p className="cta-subtitle">{dict.cta.subtitle}</p>
         <div className="cta-buttons">
-          <a
-            href="https://github.com/co-r-e/dexcode"
-            className="btn btn-primary btn-large"
+          <span
+            className="btn btn-primary btn-large btn-disabled"
+            role="button"
+            aria-disabled="true"
+            tabIndex={0}
+            data-tooltip={dict.maintenance.ctaTooltip}
+            title={dict.maintenance.ctaTooltip}
           >
             {dict.cta.button}
-          </a>
+          </span>
           <a
             href="/dexcode-lp/docs/getting-started/introduction"
             className="btn btn-secondary btn-large"

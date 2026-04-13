@@ -21,12 +21,16 @@ export function HeroSection({ dict }: HeroSectionProps): ReactNode {
           </h1>
           <p className="hero-subtitle">{dict.hero.subtitle}</p>
           <div className="hero-actions">
-            <a
-              href="https://github.com/co-r-e/dexcode"
-              className="btn btn-primary"
+            <span
+              className="btn btn-primary btn-disabled"
+              role="button"
+              aria-disabled="true"
+              tabIndex={0}
+              data-tooltip={dict.maintenance.ctaTooltip}
+              title={dict.maintenance.ctaTooltip}
             >
               {dict.hero.cta}
-            </a>
+            </span>
           </div>
           <p className="hero-oss-note">
             <span className="oss-indicator" />

@@ -77,6 +77,10 @@ export interface Dictionary {
     docs: string;
     company: string;
   };
+  maintenance: {
+    banner: string;
+    ctaTooltip: string;
+  };
 }
 
 const en: Dictionary = {
@@ -229,6 +233,10 @@ const en: Dictionary = {
     docs: "Docs",
     company: "Company",
   },
+  maintenance: {
+    banner: "DexCode is currently undergoing a major overhaul and is temporarily unavailable.",
+    ctaTooltip: "Currently unavailable due to ongoing maintenance.",
+  },
 };
 
 const ja: Dictionary = {
@@ -380,6 +388,10 @@ const ja: Dictionary = {
     github: "GitHub",
     docs: "Docs",
     company: "Company",
+  },
+  maintenance: {
+    banner: "現在、大型の改修を行っているため一時的にご利用いただけません。",
+    ctaTooltip: "現在改修中のためご利用いただけません。",
   },
 };
 

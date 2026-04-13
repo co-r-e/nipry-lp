@@ -4,6 +4,7 @@ import type { Locale } from "@/i18n/config";
 import "@/styles/lp.css";
 
 import { LpHeader } from "./LpHeader";
+import { NoticeBanner } from "./NoticeBanner";
 import { HeroSection } from "./HeroSection";
 import { UsageFlowSection } from "./UsageFlowSection";
 import { SlideShowcaseSection } from "./SlideShowcaseSection";
@@ -23,6 +24,7 @@ export function LpPage({ locale, dict }: LpPageProps): ReactNode {
   return (
     <div className="lp-root">
       <LpHeader dict={dict} locale={locale} />
+      <NoticeBanner dict={dict} />
       <main>
         <HeroSection dict={dict} />
         <UsageFlowSection dict={dict} />

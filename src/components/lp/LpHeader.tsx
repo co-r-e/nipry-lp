@@ -64,14 +64,16 @@ export function LpHeader({ dict, locale }: LpHeaderProps): ReactNode {
             </svg>
             {dict.header.langLabel}
           </a>
-          <a
-            href="https://github.com/co-r-e/dexcode"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary btn-header"
+          <span
+            className="btn btn-primary btn-header btn-disabled"
+            role="button"
+            aria-disabled="true"
+            tabIndex={0}
+            data-tooltip={dict.maintenance.ctaTooltip}
+            title={dict.maintenance.ctaTooltip}
           >
             {dict.header.cta}
-          </a>
+          </span>
         </div>
       </div>
     </header>
