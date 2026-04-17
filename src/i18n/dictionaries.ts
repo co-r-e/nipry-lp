@@ -85,9 +85,9 @@ export interface Dictionary {
 
 const en: Dictionary = {
   meta: {
-    title: "DexCode - The AI-First Slide Authoring & Refinement Tool",
+    title: "Amaroad - The AI-First Slide Authoring & Refinement Tool",
     description: "Create slide drafts fast, refine each slide in parallel with AI agents, then share a live URL via Cloudflare Tunnel for real-time review.",
-    ogTitle: "DexCode - The AI-First Slide Authoring & Refinement Tool",
+    ogTitle: "Amaroad - The AI-First Slide Authoring & Refinement Tool",
     ogDescription: "Your AI agent builds the deck. You never leave the terminal. Create, revise, and share slides from the same CLI where you write code.",
     locale: "en_US",
   },
@@ -140,7 +140,7 @@ const en: Dictionary = {
     subtitle: "Charts, code blocks, layouts, dashboards — all production-ready out of the box.",
   },
   concept: {
-    title: "Why DexCode?",
+    title: "Why Amaroad?",
     subtitle: "Built for developers who don't want to break their flow.",
     cards: [
       {
@@ -178,7 +178,7 @@ const en: Dictionary = {
       {
         title: "Install & Initialize",
         description: "Clone the repo and install dependencies.",
-        code: "git clone git@github.com:co-r-e/dexcode.git DexCode\ncd DexCode\nnpm install",
+        code: "git clone git@github.com:co-r-e/amaroad.git amaroad\ncd amaroad\nnpm install",
       },
       {
         title: "Create the First Draft",
@@ -199,7 +199,7 @@ const en: Dictionary = {
   },
   agentSkills: {
     title: "14 Built-in Agent Skills",
-    subtitle: "Specialized Claude Code skills that extend DexCode with AI-powered workflows — from deck design to video export.",
+    subtitle: "Specialized Claude Code skills that extend Amaroad with AI-powered workflows — from deck design to video export.",
     colSkill: "Skill",
     colDescription: "Description",
     colTrigger: "Trigger",
@@ -234,16 +234,16 @@ const en: Dictionary = {
     company: "Company",
   },
   maintenance: {
-    banner: "DexCode is currently undergoing a major overhaul and is temporarily unavailable.",
-    ctaTooltip: "Currently unavailable due to ongoing maintenance.",
+    banner: "Amaroad is currently undergoing a major renewal and service has been suspended.",
+    ctaTooltip: "Service is currently suspended due to a major renewal.",
   },
 };
 
 const ja: Dictionary = {
   meta: {
-    title: "DexCode - AIファーストのスライド作成・改善ツール",
+    title: "Amaroad - AIファーストのスライド作成・改善ツール",
     description: "AIエージェントでスライドを高速に作成し、スライドごとに並列で改善。Cloudflare Tunnelでライブ共有。",
-    ogTitle: "DexCode - AIファーストのスライド作成・改善ツール",
+    ogTitle: "Amaroad - AIファーストのスライド作成・改善ツール",
     ogDescription: "AIエージェントがデッキを作成。ターミナルから離れない。コードを書くのと同じCLIでスライドを作成・修正・共有。",
     locale: "ja_JP",
   },
@@ -296,7 +296,7 @@ const ja: Dictionary = {
     subtitle: "チャート、コードブロック、レイアウト、ダッシュボード — すべてすぐに使えます。",
   },
   concept: {
-    title: "なぜ DexCode？",
+    title: "なぜ Amaroad？",
     subtitle: "フローを止めたくない開発者のために。",
     cards: [
       {
@@ -334,7 +334,7 @@ const ja: Dictionary = {
       {
         title: "インストール・初期設定",
         description: "リポジトリをクローンして依存関係をインストール。",
-        code: "git clone git@github.com:co-r-e/dexcode.git DexCode\ncd DexCode\nnpm install",
+        code: "git clone git@github.com:co-r-e/amaroad.git amaroad\ncd amaroad\nnpm install",
       },
       {
         title: "最初のドラフトを作成",
@@ -390,8 +390,8 @@ const ja: Dictionary = {
     company: "Company",
   },
   maintenance: {
-    banner: "現在、大型の改修を行っているため一時的にご利用いただけません。",
-    ctaTooltip: "現在改修中のためご利用いただけません。",
+    banner: "現在大幅リニューアル中につき、ご利用を停止しています。",
+    ctaTooltip: "現在大幅リニューアル中につき、ご利用を停止しています。",
   },
 };
 

@@ -35,8 +35,8 @@ export function LpHeader({ dict, locale }: LpHeaderProps): ReactNode {
         </nav>
         <a href={assetUrl(locale === "en" ? "/" : "/ja")} className="logo">
           <img
-            src={assetUrl("/assets/dexcode-logo.svg")}
-            alt="DexCode logo"
+            src={assetUrl("/assets/amaroad-logo.svg")}
+            alt="Amaroad logo"
             className="logo-img"
           />
         </a>

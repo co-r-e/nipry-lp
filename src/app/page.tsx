@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/`,
     title: dict.meta.ogTitle,
     description: dict.meta.ogDescription,
-    siteName: "DexCode",
+    siteName: "Amaroad",
     images: [
       {
         url: `${SITE_URL}/assets/og-image.png?v=2`,
@@ -58,16 +58,16 @@ export default function EnglishLpPage(): ReactNode {
             {
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
-              name: "DexCode",
+              name: "Amaroad",
               description: dict.meta.description,
               url: `${SITE_URL}/`,
               applicationCategory: "DeveloperApplication",
               operatingSystem: "macOS, Linux, Windows (WSL)",
               offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
               license: "https://opensource.org/licenses/MIT",
-              codeRepository: "https://github.com/co-r-e/dexcode",
-              installUrl: "https://github.com/co-r-e/dexcode",
-              downloadUrl: "https://github.com/co-r-e/dexcode",
+              codeRepository: "https://github.com/co-r-e/amaroad",
+              installUrl: "https://github.com/co-r-e/amaroad",
+              downloadUrl: "https://github.com/co-r-e/amaroad",
               softwareVersion: "0.1.3",
               datePublished: "2025-01-01",
               inLanguage: ["en", "ja"],
@@ -81,7 +81,7 @@ export default function EnglishLpPage(): ReactNode {
             {
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "DexCode",
+              name: "Amaroad",
               url: `${SITE_URL}/`,
               inLanguage: ["en", "ja"],
               potentialAction: {

@@ -5,14 +5,14 @@
     --bg-color: #111111;
     --text-color: #e8e8e8;
     --text-light: #999;
-    --accent-color: #e17120;
-    --accent-hover: #c75c13;
-    --accent-gradient: linear-gradient(135deg, #ffb56a, #f59e3a, #e17120, #c75812);
+    --accent-color: #009776;
+    --accent-hover: #007a63;
+    --accent-gradient: linear-gradient(135deg, #33c9a5, #0db58c, #009776, #007a63);
     --secondary-bg: #1a1a1a;
     --border-color: rgba(255, 255, 255, 0.08);
     --code-bg: #0a0a0a;
-    --code-text: #f8d9bd;
-    --success: #ffb25a;
+    --code-text: #bdf0de;
+    --success: #33c9a5;
 
     --font-heading: var(--font-inter), var(--font-noto-sans-jp), sans-serif;
     --font-body: var(--font-inter), var(--font-noto-sans-jp), sans-serif;
@@ -200,7 +200,7 @@
 }
 
 .lp-root .btn-secondary:hover {
-    background-color: rgba(245, 158, 11, 0.12);
+    background-color: rgba(0, 151, 118, 0.12);
 }
 
 .lp-root .btn-large {
@@ -258,7 +258,7 @@
 
 .lp-root .lang-switch:hover {
     color: var(--accent-color);
-    background-color: rgba(245, 158, 11, 0.12);
+    background-color: rgba(0, 151, 118, 0.12);
 }
 
 .lp-root .lang-icon {
@@ -345,7 +345,7 @@
 .lp-root .slide-thumbnail:hover {
     transform: rotate(var(--slide-tilt, 0deg)) scale(1.35);
     z-index: 1;
-    box-shadow: 0 0 24px rgba(245, 158, 11, 0.7), 0 0 48px rgba(225, 113, 32, 0.4), 0 0 80px rgba(251, 146, 60, 0.2);
+    box-shadow: 0 0 24px rgba(0, 151, 118, 0.7), 0 0 48px rgba(0, 151, 118, 0.4), 0 0 80px rgba(13, 181, 140, 0.2);
     filter: brightness(1.6) saturate(1.3);
 }
 
@@ -451,8 +451,8 @@
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse at 20% 80%, rgba(225, 113, 32, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(251, 146, 60, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(0, 151, 118, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(13, 181, 140, 0.06) 0%, transparent 50%),
         radial-gradient(circle at center, rgba(17,17,17,0.95) 0%, rgba(17,17,17,0.8) 40%, rgba(17,17,17,0.4) 100%);
     z-index: 1;
     pointer-events: none;
@@ -509,8 +509,8 @@
     font-size: 1rem;
     font-weight: 700;
     color: var(--accent-color);
-    background-color: rgba(225, 113, 32, 0.08);
-    border: 1.5px solid rgba(245, 158, 11, 0.2);
+    background-color: rgba(0, 151, 118, 0.08);
+    border: 1.5px solid rgba(0, 151, 118, 0.2);
     border-radius: 50px;
 }
 
@@ -520,14 +520,14 @@
     border-radius: 50%;
     background: var(--accent-gradient);
     display: inline-block;
-    box-shadow: 0 0 6px rgba(245, 158, 11, 0.5);
+    box-shadow: 0 0 6px rgba(0, 151, 118, 0.5);
     animation: lp-pulse-glow 2s ease-in-out infinite;
     flex-shrink: 0;
 }
 
 @keyframes lp-pulse-glow {
-    0%, 100% { box-shadow: 0 0 6px rgba(245, 158, 11, 0.5); }
-    50% { box-shadow: 0 0 14px rgba(251, 146, 60, 0.9); }
+    0%, 100% { box-shadow: 0 0 6px rgba(0, 151, 118, 0.5); }
+    50% { box-shadow: 0 0 14px rgba(13, 181, 140, 0.9); }
 }
 
 /* Hero Visual (Code Window) */
@@ -543,7 +543,7 @@
 
 .lp-root .hero-terminal {
     background-color: var(--code-bg);
-    border: 1px solid rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(0, 151, 118, 0.15);
     border-radius: var(--radius-lg);
 }
 
@@ -567,8 +567,8 @@
     border-radius: 50%;
 }
 .lp-root .red { background-color: #ffb26a; }
-.lp-root .yellow { background-color: #f59e3a; }
-.lp-root .green { background-color: #e17120; }
+.lp-root .yellow { background-color: #0db58c; }
+.lp-root .green { background-color: #009776; }
 
 .lp-root .window-title {
     flex: 1;
@@ -592,7 +592,7 @@
 }
 
 .lp-root .window-tab.active {
-    background-color: rgba(245, 158, 11, 0.15);
+    background-color: rgba(0, 151, 118, 0.15);
     color: #ffd4a9;
 }
 
@@ -778,11 +778,11 @@
     height: 8%;
 }
 
-.lp-root .usage-deco-l1 { width: 80px; height: 50px; background: linear-gradient(135deg, #facc15, #f59e0b); top: 0; left: -60px; transform: rotate(-8deg); }
-.lp-root .usage-deco-l2 { width: 64px; height: 40px; background: linear-gradient(135deg, #ffbf7a, #e17120); top: 60px; left: -20px; transform: rotate(4deg); }
-.lp-root .usage-deco-l3 { width: 56px; height: 35px; background: linear-gradient(135deg, #fbbf24, #fb923c); top: 115px; left: -50px; transform: rotate(-3deg); }
-.lp-root .usage-deco-r1 { width: 72px; height: 45px; background: linear-gradient(135deg, #f59e3a, #c85f17); top: 5px; right: -50px; transform: rotate(6deg); }
-.lp-root .usage-deco-r2 { width: 60px; height: 38px; background: linear-gradient(135deg, #fde047, #f59e0b); top: 70px; right: -25px; transform: rotate(-5deg); }
+.lp-root .usage-deco-l1 { width: 80px; height: 50px; background: linear-gradient(135deg, #33c9a5, #0db58c); top: 0; left: -60px; transform: rotate(-8deg); }
+.lp-root .usage-deco-l2 { width: 64px; height: 40px; background: linear-gradient(135deg, #66d4bb, #009776); top: 60px; left: -20px; transform: rotate(4deg); }
+.lp-root .usage-deco-l3 { width: 56px; height: 35px; background: linear-gradient(135deg, #33c9a5, #0db58c); top: 115px; left: -50px; transform: rotate(-3deg); }
+.lp-root .usage-deco-r1 { width: 72px; height: 45px; background: linear-gradient(135deg, #0db58c, #005551); top: 5px; right: -50px; transform: rotate(6deg); }
+.lp-root .usage-deco-r2 { width: 60px; height: 38px; background: linear-gradient(135deg, #5eead4, #0db58c); top: 70px; right: -25px; transform: rotate(-5deg); }
 .lp-root .usage-deco-r3 { width: 68px; height: 42px; background: linear-gradient(135deg, #ffab5c, #b24d11); top: 120px; right: -55px; transform: rotate(3deg); }
 
 .lp-root .usage-flow-decorated {
@@ -793,7 +793,7 @@
 .lp-root .usage-bottom-deco {
     position: absolute;
     border-radius: 6px;
-    border: 2px solid rgba(225, 113, 32, 0.25);
+    border: 2px solid rgba(0, 151, 118, 0.25);
     background: transparent;
     opacity: 0.45;
     pointer-events: none;
@@ -806,7 +806,7 @@
     left: 14%;
     width: 45%;
     height: 12%;
-    background: rgba(225, 113, 32, 0.2);
+    background: rgba(0, 151, 118, 0.2);
     border-radius: 2px;
 }
 
@@ -817,14 +817,14 @@
     left: 14%;
     width: 65%;
     height: 7%;
-    background: rgba(225, 113, 32, 0.15);
+    background: rgba(0, 151, 118, 0.15);
     border-radius: 2px;
 }
 
-.lp-root .usage-bottom-l1 { width: 96px; height: 54px; bottom: 80px; left: -30px; transform: rotate(7deg); border-color: rgba(251, 191, 36, 0.3); }
+.lp-root .usage-bottom-l1 { width: 96px; height: 54px; bottom: 80px; left: -30px; transform: rotate(7deg); border-color: rgba(51, 201, 165, 0.3); }
 .lp-root .usage-bottom-l2 { width: 72px; height: 41px; bottom: 150px; left: -55px; transform: rotate(-10deg); border-color: rgba(249, 115, 22, 0.3); }
-.lp-root .usage-bottom-l3 { width: 60px; height: 34px; bottom: 30px; left: -10px; transform: rotate(3deg); border-color: rgba(245, 158, 58, 0.25); }
-.lp-root .usage-bottom-r1 { width: 88px; height: 50px; bottom: 90px; right: -40px; transform: rotate(-6deg); border-color: rgba(225, 113, 32, 0.3); }
+.lp-root .usage-bottom-l3 { width: 60px; height: 34px; bottom: 30px; left: -10px; transform: rotate(3deg); border-color: rgba(13, 181, 140, 0.25); }
+.lp-root .usage-bottom-r1 { width: 88px; height: 50px; bottom: 90px; right: -40px; transform: rotate(-6deg); border-color: rgba(0, 151, 118, 0.3); }
 .lp-root .usage-bottom-r2 { width: 68px; height: 38px; bottom: 160px; right: -15px; transform: rotate(9deg); border-color: rgba(253, 224, 71, 0.3); }
 .lp-root .usage-bottom-r3 { width: 52px; height: 30px; bottom: 40px; right: -50px; transform: rotate(-4deg); border-color: rgba(200, 95, 23, 0.3); }
 
@@ -854,7 +854,7 @@
     left: 19px;
     width: 2px;
     height: 100%;
-    background: linear-gradient(to bottom, var(--border-color), rgba(245, 158, 11, 0.3), rgba(251, 146, 60, 0.3), var(--border-color));
+    background: linear-gradient(to bottom, var(--border-color), rgba(0, 151, 118, 0.3), rgba(13, 181, 140, 0.3), var(--border-color));
 }
 
 .lp-root .usage-step {
@@ -1017,7 +1017,7 @@
 
 .lp-root .card:hover {
     transform: translateY(-4px);
-    border-color: rgba(245, 158, 11, 0.3);
+    border-color: rgba(0, 151, 118, 0.3);
 }
 
 .lp-root .concept-card {
@@ -1027,7 +1027,7 @@
 .lp-root .icon-wrapper {
     width: 48px;
     height: 48px;
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(251, 146, 60, 0.15));
+    background: linear-gradient(135deg, rgba(0, 151, 118, 0.15), rgba(13, 181, 140, 0.15));
     border-radius: 14px;
     display: flex;
     align-items: center;
@@ -1119,7 +1119,7 @@
 }
 
 .lp-root .skills-table tbody tr:hover {
-    background: rgba(225, 113, 32, 0.06);
+    background: rgba(0, 151, 118, 0.06);
 }
 
 .lp-root .skills-table tbody tr:last-child td {
@@ -1148,8 +1148,8 @@
 }
 
 .lp-root .skill-trigger-cell code {
-    background: rgba(225, 113, 32, 0.12);
-    color: #ffb56a;
+    background: rgba(0, 151, 118, 0.12);
+    color: #66d4bb;
     padding: 3px 10px;
     border-radius: 6px;
     font-size: 0.82rem;
@@ -1168,7 +1168,7 @@
     color: #ffffff;
 }
 
-.lp-root .how-it-works .section-title { color: #ffb56a; }
+.lp-root .how-it-works .section-title { color: #66d4bb; }
 .lp-root .how-it-works .section-subtitle { color: rgba(255,255,255,0.7); }
 
 .lp-root .steps {
@@ -1204,7 +1204,7 @@
 }
 
 .lp-root .code-block {
-    background-color: rgba(225, 113, 32, 0.1);
+    background-color: rgba(0, 151, 118, 0.1);
     border-radius: var(--radius-md);
     padding: 16px;
     overflow-x: auto;
@@ -1220,7 +1220,7 @@
 /* CTA Section */
 .lp-root .cta-section {
     padding: 100px 0;
-    background: linear-gradient(180deg, var(--secondary-bg) 0%, rgba(245, 158, 11, 0.03) 100%);
+    background: linear-gradient(180deg, var(--secondary-bg) 0%, rgba(0, 151, 118, 0.03) 100%);
     border-top: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
@@ -1260,14 +1260,14 @@
     height: 8%;
 }
 
-.lp-root .cta-deco-1 { width: 120px; height: 68px; background: linear-gradient(160deg, #ffb56a, #e17120); top: 15%; left: 3%; transform: rotate(-12deg); }
-.lp-root .cta-deco-2 { width: 90px; height: 51px; background: linear-gradient(140deg, #fbbf24, #f97316); top: 55%; left: 8%; transform: rotate(6deg); }
-.lp-root .cta-deco-3 { width: 70px; height: 40px; background: linear-gradient(170deg, #fde047, #fb923c); bottom: 10%; left: 2%; transform: rotate(-4deg); }
-.lp-root .cta-deco-4 { width: 56px; height: 32px; background: linear-gradient(135deg, #f59e3a, #c75812); top: 8%; left: 18%; transform: rotate(15deg); }
-.lp-root .cta-deco-5 { width: 110px; height: 62px; background: linear-gradient(150deg, #f97316, #ef4444); top: 12%; right: 4%; transform: rotate(10deg); }
-.lp-root .cta-deco-6 { width: 80px; height: 45px; background: linear-gradient(165deg, #ffb56a, #c85f17); top: 58%; right: 6%; transform: rotate(-8deg); }
-.lp-root .cta-deco-7 { width: 64px; height: 36px; background: linear-gradient(130deg, #fbbf24, #ef4444); bottom: 12%; right: 2%; transform: rotate(5deg); }
-.lp-root .cta-deco-8 { width: 100px; height: 56px; background: linear-gradient(145deg, #fcd34d, #e17120); top: 5%; right: 20%; transform: rotate(-14deg); }
+.lp-root .cta-deco-1 { width: 120px; height: 68px; background: linear-gradient(160deg, #66d4bb, #009776); top: 15%; left: 3%; transform: rotate(-12deg); }
+.lp-root .cta-deco-2 { width: 90px; height: 51px; background: linear-gradient(140deg, #33c9a5, #009776); top: 55%; left: 8%; transform: rotate(6deg); }
+.lp-root .cta-deco-3 { width: 70px; height: 40px; background: linear-gradient(170deg, #5eead4, #0db58c); bottom: 10%; left: 2%; transform: rotate(-4deg); }
+.lp-root .cta-deco-4 { width: 56px; height: 32px; background: linear-gradient(135deg, #0db58c, #005551); top: 8%; left: 18%; transform: rotate(15deg); }
+.lp-root .cta-deco-5 { width: 110px; height: 62px; background: linear-gradient(150deg, #009776, #005551); top: 12%; right: 4%; transform: rotate(10deg); }
+.lp-root .cta-deco-6 { width: 80px; height: 45px; background: linear-gradient(165deg, #66d4bb, #005551); top: 58%; right: 6%; transform: rotate(-8deg); }
+.lp-root .cta-deco-7 { width: 64px; height: 36px; background: linear-gradient(130deg, #33c9a5, #005551); bottom: 12%; right: 2%; transform: rotate(5deg); }
+.lp-root .cta-deco-8 { width: 100px; height: 56px; background: linear-gradient(145deg, #5eead4, #009776); top: 5%; right: 20%; transform: rotate(-14deg); }
 
 .lp-root .cta-label {
     font-size: 0.85rem;

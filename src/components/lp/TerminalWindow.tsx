@@ -9,7 +9,7 @@ export function TerminalWindow(): ReactNode {
           <span className="dot yellow" />
           <span className="dot green" />
         </div>
-        <span className="window-title">DexCode — zsh</span>
+        <span className="window-title">Amaroad — zsh</span>
         <div className="window-tabs">
           <span className="window-tab active">terminal</span>
           <span className="window-tab">output</span>
@@ -18,15 +18,15 @@ export function TerminalWindow(): ReactNode {
       <div className="code-content">
         <div className="code-line">
           <span className="line-num">1</span>
-          <span className="prompt">$</span> <span className="cmd">git clone</span> git@github.com:co-r-e/dexcode.git DexCode
+          <span className="prompt">$</span> <span className="cmd">git clone</span> git@github.com:co-r-e/amaroad.git amaroad
         </div>
         <div className="code-line dimmed">
           <span className="line-num">2</span>
-          <span className="output-text">{"Cloning into 'DexCode'... done."}</span>
+          <span className="output-text">{"Cloning into 'amaroad'... done."}</span>
         </div>
         <div className="code-line">
           <span className="line-num">3</span>
-          <span className="prompt">$</span> <span className="cmd">cd</span> DexCode && <span className="cmd">npm install</span> && <span className="cmd">npm run</span> dev
+          <span className="prompt">$</span> <span className="cmd">cd</span> amaroad && <span className="cmd">npm install</span> && <span className="cmd">npm run</span> dev
         </div>
         <div className="code-line dimmed">
           <span className="line-num">4</span>
@@ -48,7 +48,7 @@ export function TerminalWindow(): ReactNode {
       </div>
       <div className="terminal-statusbar">
         <span className="statusbar-left">zsh</span>
-        <span className="statusbar-center">~/projects/DexCode</span>
+        <span className="statusbar-center">~/projects/amaroad</span>
         <span className="statusbar-right">node v20.11</span>
       </div>
     </div>

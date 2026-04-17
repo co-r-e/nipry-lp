@@ -24,9 +24,9 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "DexCode | AI-First Slide Authoring & Refinement Tool",
+  title: "Amaroad | AI-First Slide Authoring & Refinement Tool",
   description:
-    "DexCode is an AI-first slide authoring tool. Create slide drafts fast, refine each slide in parallel with AI agents, then share a live URL via Cloudflare Tunnel.",
+    "Amaroad is an AI-first slide authoring tool. Create slide drafts fast, refine each slide in parallel with AI agents, then share a live URL via Cloudflare Tunnel.",
   icons: {
     icon: "/assets/favicon.svg",
   },

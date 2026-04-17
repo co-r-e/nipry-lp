@@ -13,15 +13,15 @@ export function LpFooter({ dict }: LpFooterProps): ReactNode {
         <div className="footer-left">
           <div className="logo">
             <img
-              src={assetUrl("/assets/dexcode-logo.svg")}
-              alt="DexCode logo"
+              src={assetUrl("/assets/amaroad-logo.svg")}
+              alt="Amaroad logo"
               className="logo-img-sm"
             />
           </div>
           <p className="copyright">{dict.footer.copyright}</p>
         </div>
         <div className="footer-right">
-          <a href="https://github.com/co-r-e/dexcode" className="footer-link">
+          <a href="https://github.com/co-r-e/amaroad" className="footer-link">
             {dict.footer.github}
           </a>
           <a href="/dexcode-lp/docs/getting-started/introduction" className="footer-link">

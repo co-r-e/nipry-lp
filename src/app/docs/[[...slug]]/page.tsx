@@ -28,23 +28,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!slug || slug.length === 0) {
     return {
-      title: "Documentation | DexCode",
-      description: "DexCode documentation and guides.",
+      title: "Documentation | Amaroad",
+      description: "Amaroad documentation and guides.",
     };
   }
 
   const page = await getPageBySlug(slug);
   if (!page) {
-    return { title: "Not Found | DexCode Docs" };
+    return { title: "Not Found | Amaroad Docs" };
   }
 
   const { title, description } = page.frontmatter;
 
   return {
-    title: `${title} | DexCode Docs`,
+    title: `${title} | Amaroad Docs`,
     description,
     openGraph: {
-      title: `${title} | DexCode Docs`,
+      title: `${title} | Amaroad Docs`,
       description,
       type: "article",
     },
@@ -80,7 +80,7 @@ export default async function DocsPage({ params }: Props): Promise<ReactNode> {
     url: `${baseUrl}/docs/${slug.join("/")}`,
     publisher: {
       "@type": "Organization",
-      name: "DexCode",
+      name: "Amaroad",
       url: baseUrl,
     },
   });

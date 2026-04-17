@@ -66,28 +66,28 @@ const features = [
 
 const faqItems = [
   {
-    q: "What is DexCode?",
-    a: "DexCode is an AI-first slide authoring and refinement tool. It lets you create, revise, and share slide decks from the terminal using AI agents like Claude Code.",
+    q: "What is Amaroad?",
+    a: "Amaroad is an AI-first slide authoring and refinement tool. It lets you create, revise, and share slide decks from the terminal using AI agents like Claude Code.",
   },
   {
     q: "Do I need PowerPoint or Keynote?",
-    a: "No. DexCode runs entirely in the terminal and browser. Slides are MDX files that render in real-time. No desktop presentation app required.",
+    a: "No. Amaroad runs entirely in the terminal and browser. Slides are MDX files that render in real-time. No desktop presentation app required.",
   },
   {
     q: "Which AI agents are supported?",
-    a: "DexCode works with any AI coding agent that can edit files — Claude Code, Codex CLI, Gemini CLI, Cursor, and more.",
+    a: "Amaroad works with any AI coding agent that can edit files — Claude Code, Codex CLI, Gemini CLI, Cursor, and more.",
   },
   {
-    q: "Is DexCode free?",
-    a: "Yes. DexCode is open source under the MIT license. Clone the repo, install dependencies, and start creating.",
+    q: "Is Amaroad free?",
+    a: "Yes. Amaroad is open source under the MIT license. Clone the repo, install dependencies, and start creating.",
   },
   {
     q: "Can I share my slides with others?",
     a: "Yes. Use Cloudflare Tunnel to expose a live URL, export to PDF/PPTX, or simply share the project repo.",
   },
   {
-    q: "What technologies does DexCode use?",
-    a: "DexCode is built with Next.js, MDX, React, and Tailwind CSS. Slides are React components rendered with hot module replacement.",
+    q: "What technologies does Amaroad use?",
+    a: "Amaroad is built with Next.js, MDX, React, and Tailwind CSS. Slides are React components rendered with hot module replacement.",
   },
 ];
 
@@ -95,10 +95,10 @@ export default function LandingPage(): ReactNode {
   return (
     <div className="min-h-screen bg-[var(--background)] font-[family-name:var(--font-figtree)] text-[var(--ink)]">
       <header className="sticky top-0 z-40 flex h-14 items-center justify-between border-b border-[var(--line)] bg-[var(--background)]/80 px-4 backdrop-blur-lg lg:px-8">
-        <span className="text-lg font-bold tracking-tight">DexCode</span>
+        <span className="text-lg font-bold tracking-tight">Amaroad</span>
         <nav className="flex items-center gap-6">
           <Link href="/docs" className="text-sm text-[var(--ink-soft)] transition hover:text-[var(--ink)]">Docs</Link>
-          <a href="https://github.com/co-r-e/dexcode" target="_blank" rel="noopener noreferrer" className="text-sm text-[var(--ink-soft)] transition hover:text-[var(--ink)]">GitHub</a>
+          <a href="https://github.com/co-r-e/amaroad" target="_blank" rel="noopener noreferrer" className="text-sm text-[var(--ink-soft)] transition hover:text-[var(--ink)]">GitHub</a>
         </nav>
       </header>
 
@@ -106,18 +106,18 @@ export default function LandingPage(): ReactNode {
         <p className={`${SECTION_LABEL} mb-4`}>AI-First Slide Authoring</p>
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
           Create & Refine Slides{" "}
-          <span className="bg-gradient-to-r from-orange-300 to-orange-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-teal-300 to-teal-500 bg-clip-text text-transparent">
             From Your Terminal
           </span>
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-[var(--ink-soft)]">
-          DexCode lets you generate slide decks with AI agents, refine each slide in parallel, and share a live URL — all without leaving your coding workflow.
+          Amaroad lets you generate slide decks with AI agents, refine each slide in parallel, and share a live URL — all without leaving your coding workflow.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Link href="/docs/getting-started/introduction" className={BTN_PRIMARY}>
             Get Started
           </Link>
-          <a href="https://github.com/co-r-e/dexcode" target="_blank" rel="noopener noreferrer" className={BTN_OUTLINE}>
+          <a href="https://github.com/co-r-e/amaroad" target="_blank" rel="noopener noreferrer" className={BTN_OUTLINE}>
             View on GitHub
           </a>
         </div>
@@ -168,13 +168,13 @@ export default function LandingPage(): ReactNode {
         </h2>
         <OsTabs items="npm,From Source">
           <div className={TERMINAL_BLOCK}>
-            <ShellLine>git clone git@github.com:co-r-e/dexcode.git DexCode</ShellLine>
-            <ShellLine>cd DexCode && npm install</ShellLine>
+            <ShellLine>git clone git@github.com:co-r-e/amaroad.git amaroad</ShellLine>
+            <ShellLine>cd amaroad && npm install</ShellLine>
             <ShellLine>npm run dev</ShellLine>
           </div>
           <div className={TERMINAL_BLOCK}>
-            <ShellLine>git clone git@github.com:co-r-e/dexcode.git DexCode</ShellLine>
-            <ShellLine>cd DexCode</ShellLine>
+            <ShellLine>git clone git@github.com:co-r-e/amaroad.git amaroad</ShellLine>
+            <ShellLine>cd amaroad</ShellLine>
             <ShellLine>npm install</ShellLine>
             <ShellLine>npm run build</ShellLine>
           </div>
@@ -188,8 +188,8 @@ export default function LandingPage(): ReactNode {
         </h2>
         <div className={TERMINAL_BLOCK}>
           <ShellComment first>Clone and install</ShellComment>
-          <ShellLine>git clone git@github.com:co-r-e/dexcode.git DexCode</ShellLine>
-          <ShellLine>cd DexCode && npm install && npm run dev</ShellLine>
+          <ShellLine>git clone git@github.com:co-r-e/amaroad.git amaroad</ShellLine>
+          <ShellLine>cd amaroad && npm install && npm run dev</ShellLine>
 
           <ShellComment>Open Claude Code and create a deck</ShellComment>
           <ShellLine>claude</ShellLine>
@@ -228,7 +228,7 @@ export default function LandingPage(): ReactNode {
           <p>&copy; {new Date().getFullYear()} CORe Inc. MIT License.</p>
           <div className="flex gap-6">
             <Link href="/docs" className="transition hover:text-[var(--ink)]">Documentation</Link>
-            <a href="https://github.com/co-r-e/dexcode" target="_blank" rel="noopener noreferrer" className="transition hover:text-[var(--ink)]">GitHub</a>
+            <a href="https://github.com/co-r-e/amaroad" target="_blank" rel="noopener noreferrer" className="transition hover:text-[var(--ink)]">GitHub</a>
           </div>
         </div>
       </footer>

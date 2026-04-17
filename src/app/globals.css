@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  /* -- Core palette (dark defaults — DexCode charcoal/orange) -- */
+  /* -- Core palette (dark defaults — Amaroad charcoal/teal) -- */
   --background: #111111;
   --ink: #e8e8e8;
   --ink-soft: rgba(232, 232, 232, 0.65);
   --line: rgba(255, 255, 255, 0.08);
   --line-strong: rgba(255, 255, 255, 0.2);
-  --accent: #e17120;
-  --accent-soft: rgba(225, 113, 32, 0.15);
+  --accent: #009776;
+  --accent-soft: rgba(0, 151, 118, 0.15);
   --surface: #1a1a1a;
 
   /* -- Semantic status colors -- */
@@ -24,7 +24,7 @@
   /* -- Code blocks (always dark, regardless of theme) -- */
   --code-bg: #0a0a0a;
   --code-bg-deep: #050505;
-  --code-ink-soft: rgba(248, 217, 189, 0.7);
+  --code-ink-soft: rgba(189, 240, 222, 0.7);
   --code-line: rgba(255, 255, 255, 0.08);
   --code-line-strong: rgba(255, 255, 255, 0.2);
   --code-title-bg: rgba(255, 255, 255, 0.04);
@@ -41,8 +41,8 @@
   --ink-soft: rgba(26, 26, 26, 0.6);
   --line: rgba(26, 26, 26, 0.1);
   --line-strong: rgba(26, 26, 26, 0.2);
-  --accent: #c75c13;
-  --accent-soft: rgba(199, 92, 19, 0.1);
+  --accent: #007a63;
+  --accent-soft: rgba(0, 122, 99, 0.1);
   --surface: #f5f5f5;
 
   /* Semantic status colors */
@@ -60,7 +60,7 @@
 }
 
 [data-theme="light"] ::selection {
-  background: rgba(225, 113, 32, 0.2);
+  background: rgba(0, 151, 118, 0.2);
 }
 
 @theme inline {
@@ -80,7 +80,7 @@
 }
 
 ::selection {
-  background: rgba(225, 113, 32, 0.25);
+  background: rgba(0, 151, 118, 0.25);
   color: inherit;
 }
 

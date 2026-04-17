@@ -37,8 +37,8 @@ export function DocsHeader({ onSearchOpen }: Props): ReactNode {
 
   return (
     <header className="sticky top-0 z-40 flex h-14 items-center justify-between border-b border-[var(--line)] bg-[var(--background)]/80 px-4 backdrop-blur-lg lg:px-6">
-      <Link href="/docs" className="flex items-center" aria-label="DexCode Docs home">
-        <img src={assetUrl(isDark ? "/assets/dexcode-logo.svg" : "/assets/dexcode-logo-dark.svg")} alt="DexCode" className="h-7 w-auto" />
+      <Link href="/docs" className="flex items-center" aria-label="Amaroad Docs home">
+        <img src={assetUrl(isDark ? "/assets/amaroad-logo.svg" : "/assets/amaroad-logo-dark.svg")} alt="Amaroad" className="h-7 w-auto" />
       </Link>
 
       <div className="flex items-center gap-2">

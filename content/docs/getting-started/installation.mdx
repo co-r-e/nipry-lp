@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: Clone the DexCode repository and install dependencies to start creating slides.
+description: Clone the Amaroad repository and install dependencies to start creating slides.
 ---
 
 ## Prerequisites
@@ -9,7 +9,7 @@ description: Clone the DexCode repository and install dependencies to start crea
 - **npm** (included with Node.js)
 - An AI coding agent (Claude Code, Codex CLI, Gemini CLI, Cursor, etc.)
 
-## Install DexCode
+## Install Amaroad
 
 <Steps>
 
@@ -17,8 +17,8 @@ description: Clone the DexCode repository and install dependencies to start crea
 **Clone the repository**
 
 ```bash
-git clone git@github.com:co-r-e/dexcode.git DexCode
-cd DexCode
+git clone git@github.com:co-r-e/amaroad.git amaroad
+cd amaroad
 ```
 </div>
 
@@ -44,16 +44,16 @@ The homepage is available at `http://localhost:3000`, listing all decks in the `
 
 ## Verify Installation
 
-Open your browser and navigate to `http://localhost:3000`. You should see the DexCode homepage listing available decks. Click on a deck name (e.g., `sample-deck`) to view it.
+Open your browser and navigate to `http://localhost:3000`. You should see the Amaroad homepage listing available decks. Click on a deck name (e.g., `sample-deck`) to view it.
 
 <Callout type="tip" title="Hot Reload">
-DexCode uses Next.js HMR (Hot Module Replacement). Any changes to MDX slide files are reflected instantly in the browser — no manual refresh needed.
+Amaroad uses Next.js HMR (Hot Module Replacement). Any changes to MDX slide files are reflected instantly in the browser — no manual refresh needed.
 </Callout>
 
 ## Project Structure
 
 <FileTree data={[
-  { name: "DexCode", type: "directory", children: [
+  { name: "amaroad", type: "directory", children: [
     { name: "decks", type: "directory", highlight: true, children: [
       { name: "sample-deck", type: "directory", highlight: true, children: [
         { name: "deck.config.ts", type: "file", highlight: true },

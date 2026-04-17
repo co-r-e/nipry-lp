@@ -3,16 +3,16 @@
 import { useEffect, useRef, type ReactNode } from "react";
 
 const GRADIENTS: [string, string][] = [
-  ["#facc15", "#f59e0b"],
-  ["#fbbf24", "#f97316"],
-  ["#f97316", "#ef4444"],
-  ["#fb923c", "#f43f5e"],
-  ["#fde047", "#fb923c"],
-  ["#ef4444", "#dc2626"],
-  ["#f59e0b", "#ea580c"],
-  ["#fcd34d", "#f87171"],
-  ["#f43f5e", "#e11d48"],
-  ["#fbbf24", "#ef4444"],
+  ["#5eead4", "#0db58c"],
+  ["#33c9a5", "#009776"],
+  ["#009776", "#005551"],
+  ["#66d4bb", "#007a63"],
+  ["#a7f3d0", "#0db58c"],
+  ["#007a63", "#02001A"],
+  ["#0db58c", "#005551"],
+  ["#5eead4", "#33c9a5"],
+  ["#66d4bb", "#009776"],
+  ["#33c9a5", "#007a63"],
 ];
 
 const TYPES = ["type-title", "type-list", "type-chart", "type-split", "type-code"];

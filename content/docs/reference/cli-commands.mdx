@@ -1,11 +1,11 @@
 ---
 title: CLI Commands
-description: Complete reference for DexCode's command-line interface.
+description: Complete reference for Amaroad's command-line interface.
 ---
 
 ## Commands
 
-DexCode is managed through npm scripts defined in `package.json`.
+Amaroad is managed through npm scripts defined in `package.json`.
 
 ## Development
 
@@ -56,7 +56,7 @@ PDF export uses Playwright for accurate rendering. PPTX export captures each sli
 
 ## Sharing via Cloudflare Tunnel
 
-DexCode includes `cloudflared` as a dependency. The tunnel can be started through the UI or by asking your AI agent:
+Amaroad includes `cloudflared` as a dependency. The tunnel can be started through the UI or by asking your AI agent:
 
 ```bash
 > Expose this deck via Cloudflare Tunnel and share the URL
@@ -71,5 +71,5 @@ npx cloudflared tunnel --url http://localhost:3000
 This generates a public URL (e.g., `https://abc123.trycloudflare.com`) that anyone can access.
 
 <Callout type="tip">
-All DexCode commands are standard npm scripts. You can inspect and modify them in `package.json`.
+All Amaroad commands are standard npm scripts. You can inspect and modify them in `package.json`.
 </Callout>

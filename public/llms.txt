@@ -1,18 +1,18 @@
-# DexCode
+# Amaroad
 
-> DexCode is an open-source, AI-first slide authoring and refinement tool for developers. Create, revise, and share presentation decks from the terminal using AI coding agents like Claude Code, Codex CLI, Gemini CLI, or Cursor.
+> Amaroad is an open-source, AI-first slide authoring and refinement tool for developers. Create, revise, and share presentation decks from the terminal using AI coding agents like Claude Code, Codex CLI, Gemini CLI, or Cursor.
 
 ## Key Facts
 
 - License: MIT (free and open source)
 - Author: CORe Inc.
-- Repository: https://github.com/co-r-e/dexcode
+- Repository: https://github.com/co-r-e/amaroad
 - Website: https://co-r-e.github.io/dexcode-lp/
 - Documentation: https://co-r-e.github.io/dexcode-lp/docs/getting-started/introduction
 
-## What DexCode Does
+## What Amaroad Does
 
-DexCode lets developers create slide presentations without leaving the terminal. Slides are written as MDX files (Markdown + React components) and rendered in real-time with hot module replacement. AI agents generate and edit slides, and multiple slides can be revised in parallel by spawning subagents.
+Amaroad lets developers create slide presentations without leaving the terminal. Slides are written as MDX files (Markdown + React components) and rendered in real-time with hot module replacement. AI agents generate and edit slides, and multiple slides can be revised in parallel by spawning subagents.
 
 ## Core Features
 
